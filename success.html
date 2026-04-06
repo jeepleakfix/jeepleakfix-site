@@ -1,124 +1,180 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Page not found</title>
-    <style>
-      :root {
-        --colorRgbFacetsTeal600: 2 128 125;
-        --colorTealAction: var(--colorRgbFacetsTeal600);
-        --colorRgbFacetsNeutralLight200: 233 235 237;
-        --colorHr: var(--colorRgbFacetsNeutralLight200);
-        --colorRgbFacetsNeutralLight700: 53 58 62;
-        --colorGrayDarkest: var(--colorRgbFacetsNeutralLight700);
-        --colorGrayLighter: var(--colorRgbFacetsNeutralLight200);
-        --colorText: var(--colorGrayDarkest);
-        --effectShadowLightShallow: 0 1px 10px 0 rgb(53 58 62 / 6%),
-          0 2px 4px 0 rgb(53 58 62 / 8%);
-        --colorRgbFacetsNeutralDark900: 6 11 16;
-      }
-      body {
-        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-          Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji",
-          "Segoe UI Emoji", "Segoe UI Symbol";
-        background: white;
-        overflow: hidden;
-        margin: 0;
-        padding: 0;
-        line-height: 1.5;
-        color: rgb(var(--colorText));
-      }
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Submission Received — JeepLeakFix.com</title>
+<meta name="description" content="Your Jeep water leak details have been submitted. Tony will review your situation and email you a personalized expert fix.">
+<meta name="robots" content="noindex, nofollow">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #0d0d0d;
+    color: #e0e0e0;
+    font-family: 'Barlow', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 18px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(13,13,13,0.95);
+    backdrop-filter: blur(10px);
+    z-index: 100;
+    border-bottom: 1px solid rgba(200,120,40,0.2);
+  }
+  .nav .logo {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 800;
+    font-size: 1.15rem;
+    letter-spacing: 1.5px;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+  .nav .logo span { color: #E05A1A; }
+  .success-card {
+    max-width: 620px;
+    width: 90%;
+    background: rgba(15,15,15,0.82);
+    backdrop-filter: blur(18px);
+    border: 1.5px solid rgba(200,120,40,0.45);
+    border-radius: 18px;
+    padding: 52px 42px;
+    text-align: center;
+    margin-top: 80px;
+  }
+  .checkmark {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: rgba(224,90,26,0.15);
+    border: 3px solid #E05A1A;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 28px;
+    font-size: 40px;
+  }
+  .success-card h1 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 800;
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #E05A1A;
+    margin-bottom: 18px;
+  }
+  .success-card p {
+    font-size: 1.08rem;
+    line-height: 1.7;
+    color: #ccc;
+    margin-bottom: 16px;
+  }
+  .success-card p strong { color: #fff; }
+  .divider {
+    width: 60px;
+    height: 3px;
+    background: #E05A1A;
+    margin: 24px auto;
+    border-radius: 2px;
+  }
+  .expert-note {
+    font-style: italic;
+    color: #aaa;
+    font-size: 0.95rem;
+    margin-top: 8px;
+  }
+  .btn-group {
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 32px;
+  }
+  .btn {
+    display: inline-block;
+    padding: 14px 28px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.2s;
+    cursor: pointer;
+  }
+  .btn-primary {
+    background: #E05A1A;
+    color: #fff;
+    border: 2px solid #E05A1A;
+  }
+  .btn-primary:hover {
+    background: #c94e15;
+    border-color: #c94e15;
+  }
+  .btn-outline {
+    background: transparent;
+    color: #E05A1A;
+    border: 2px solid rgba(224,90,26,0.5);
+  }
+  .btn-outline:hover {
+    border-color: #E05A1A;
+    background: rgba(224,90,26,0.08);
+  }
+  .contact-strip {
+    margin-top: 36px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(200,120,40,0.2);
+    font-size: 0.92rem;
+    color: #888;
+  }
+  .contact-strip a {
+    color: #E05A1A;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .contact-strip a:hover { text-decoration: underline; }
+  @media (max-width: 600px) {
+    .success-card { padding: 36px 24px; }
+    .success-card h1 { font-size: 1.6rem; }
+    .btn-group { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
 
-      @media (prefers-color-scheme: dark) {
-        body {
-          background: rgb(var(--colorRgbFacetsNeutralDark900));
-        }
-      }
+<nav class="nav">
+  <a href="/" class="logo">Jeep<span>LeakFix</span> Global Support</a>
+</nav>
 
-      h1 {
-        margin: 0;
-        font-size: 1.375rem;
-        line-height: 1;
-      }
+<div class="success-card">
+  <div class="checkmark">&#10003;</div>
+  <h1>Submission Received</h1>
+  <p><strong>Your Jeep details are in my hands.</strong></p>
+  <p>Every Jeep has its own personality — I'm reviewing your specific situation right now. You'll receive a personalized expert fix in your inbox soon.</p>
+  <div class="divider"></div>
+  <p class="expert-note">— Tony, Jeep Leak Fix Expert</p>
 
-      h1 + p {
-        margin-top: 8px;
-      }
+  <div class="btn-group">
+    <a href="/" class="btn btn-primary">Back to Community</a>
+    <a href="https://leakfixkit.com" class="btn btn-outline" target="_blank">Browse Leak Fix Kits</a>
+  </div>
 
-      .main {
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        height: 100vh;
-        width: 100vw;
-      }
+  <div class="contact-strip">
+    Need faster help? <a href="https://wa.me/18285910302">WhatsApp</a> or <a href="tel:+18285910302">Call/Text +1-828-591-0302</a>
+  </div>
+</div>
 
-      .card {
-        position: relative;
-        width: 75%;
-        max-width: 364px;
-        padding: 24px;
-        background: white;
-        border-radius: 8px;
-        box-shadow: var(--effectShadowLightShallow);
-        border: 1px solid rgb(var(--colorGrayLighter));
-      }
-
-      a {
-        margin: 0;
-        font-weight: 600;
-        color: rgb(var(--colorTealAction));
-        text-decoration-skip-ink: all;
-        text-decoration-thickness: 1px;
-        text-underline-offset: 2px;
-        text-decoration-color: rgb(var(--colorTealAction) / 0.5);
-        transition: text-decoration-color 0.15s ease-in-out;
-      }
-
-      a:hover,
-      a:focus-visible {
-        text-decoration-color: rgb(var(--colorTealAction));
-      }
-
-      p:last-of-type {
-        margin-bottom: 0;
-      }
-
-      hr {
-        border: 0;
-        height: 1px;
-        background: rgb(var(--colorHr));
-        margin-top: 16px;
-        margin-bottom: 16px;
-      }
-
-      .your-site {
-        font-size: 0.875rem;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="main">
-      <div class="card">
-        <h1>Page not found</h1>
-        <p>
-          Looks like you’ve followed a broken link or entered a URL that doesn’t
-          exist on this site.
-        </p>
-        <hr />
-        <p class="your-site">
-          If this is your site, and you weren’t expecting a 404 for this path,
-          please visit Netlify’s
-          <a
-            href="https://answers.netlify.com/t/support-guide-i-ve-deployed-my-site-but-i-still-see-page-not-found/125?utm_source=404page&utm_campaign=community_tracking"
-            >“page not found” support guide</a
-          >
-          for troubleshooting tips.
-        </p>
-      </div>
-    </div>
-  </body>
+</body>
 </html>
