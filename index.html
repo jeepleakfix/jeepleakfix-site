@@ -273,15 +273,15 @@ footer{margin:24px 0 16px;font-size:0.75rem;color:rgba(255,255,255,0.25);text-al
       <input type="email" class="styled-input" id="email" name="email" placeholder="you@email.com" required>
     </div>
 
-    <!-- Anti-spam layer 3: Cloudflare Turnstile — verifies real browser, not a bot -->
-    <div class="field-group" style="display:flex;justify-content:center;margin-bottom:20px;">
-      <div class="cf-turnstile" data-sitekey="0x4AAAAAADXQwfZPRbNQRqzb" data-theme="dark"></div>
-    </div>
-
     <button type="submit" class="btn-submit glow-pulse">
       Submit for Expert Diagnosis
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13M22 2L15 22l-4-9-9-4 20-7z"/></svg>
     </button>
+
+    <!-- Anti-spam layer 3: Cloudflare Turnstile — placed below the Submit button so the auto-checkmark isn't mistaken for a submission confirmation -->
+    <div class="field-group" style="display:flex;justify-content:center;margin-top:16px;margin-bottom:8px;">
+      <div class="cf-turnstile" data-sitekey="0x4AAAAAADXQwfZPRbNQRqzb" data-theme="dark"></div>
+    </div>
 
     <!-- Ask Tony Section -->
     <div style="margin-top:20px;background:url('global.png') center/cover no-repeat;border:1px solid rgba(200,120,40,0.5);border-radius:8px;overflow:hidden;position:relative;">
