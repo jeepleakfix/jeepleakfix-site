@@ -6,6 +6,13 @@ JLF HTML
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-P2V2SH3SPG"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-P2V2SH3SPG');
+</script>
 <title>Jeep Wrangler Water Leak Expert Fix | JK JL Gladiator | Global Support – JeepLeakFix.com</title>
 <meta name="description" content="Is your Jeep Wrangler leaking water? Get a personalized fix from Tony, a globally trusted Jeep water leak expert. JK, JL, Gladiator – Hard Top, Soft Top, Sky One-Touch. Submit your details and get your custom solution fast.">
 <meta name="robots" content="index, follow">
@@ -446,7 +453,7 @@ function renderNextBatch() {
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
           ${comments}
         </span>
-        <a href="/answers/${slug}-${idx + 1}.html" class="join-discussion">Join Discussion</a>
+        <a href="${qa.url || ('/answers/' + slug + '-' + (idx + 1) + '.html')}" class="join-discussion">Join Discussion</a>
       </div>`;
     feed.appendChild(article);
   });
@@ -462,24 +469,16 @@ function renderNextBatch() {
 function loadMore() { renderNextBatch(); }
 
 document.addEventListener('DOMContentLoaded', async function() {
-  // Try to load fresh data from Google Sheets — falls back to hardcoded data
   try {
-    const res = await fetch('https://docs.google.com/spreadsheets/d/e/2PACX-1vSmLfu5lloln1J0paSW-oJPcQONwSTkLpde39dDABln0spEAu0ikSecrwGnifBS_QWxYCeprmZfmtb0/pub?gid=2101503168&single=true&output=csv');
+    const res = await fetch('/qa-feed.json', {cache:'no-store'});
     if (res.ok) {
-      const text = await res.text();
-      const lines = text.split('\n');
-      const fresh = [];
-      for (let i = 2; i < lines.length; i++) {
-        const row = parseCSVLine(lines[i]);
-        if (row[2] && row[3] && row[2].length > 10 && !row[2].includes('Customer Question')) {
-          fresh.push({user:row[0], jeep:row[1], question:row[2], answer:row[3], category:row[4]||'', comments: Math.floor(Math.random()*5)+1});
-        }
+      const fresh = await res.json();
+      if (Array.isArray(fresh) && fresh.length > 0) {
+        fresh.forEach(function(q){ if (q.comments == null) q.comments = Math.floor(Math.random()*5)+1; });
+        allQAs.splice(0, allQAs.length, ...fresh);
       }
-      if (fresh.length > 0) allQAs.splice(0, allQAs.length, ...fresh);
     }
-  } catch(e) {
-    // Use hardcoded data as fallback
-  }
+  } catch(e) {}
   document.getElementById('qa-loading').style.display = 'none';
   renderNextBatch();
 });
