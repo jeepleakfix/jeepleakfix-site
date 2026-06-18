@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Page Not Found | JeepLeakFix.com</title>
+
+<!-- Forward legacy Shopify URLs (from before the migration) to the store; show branded 404 for everything else -->
+<script>
+(function(){
+  var p = (location.pathname || "").toLowerCase();
+  if (/^\/(products|collections|pages|cart|account|checkout)(\/|$)/.test(p)) {
+    location.replace("https://leakfixkit.com/");
+  }
+})();
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{--orange:#E05A1A;--orange-dk:#bf440e;--ink:#1d1813;--body:#332c25;--muted:#7a7066;--line:#e9e1d7;--paper:#fcfaf6;--sand:#f4ede3}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Inter',sans-serif;color:var(--body);background:var(--paper);line-height:1.7;min-height:100vh;display:flex;flex-direction:column}
+  .serif{font-family:'Playfair Display',Georgia,serif}
+  .mast{border-bottom:1px solid var(--line);background:rgba(252,250,246,.92)}
+  .mast .wrap{max-width:1080px;margin:0 auto;padding:0 24px;height:60px;display:flex;align-items:center}
+  .brand{font-weight:800;font-size:19px;color:var(--ink);letter-spacing:-.3px}.brand span{color:var(--orange)}
+  main{flex:1;display:flex;align-items:center;justify-content:center;text-align:center;padding:60px 24px}
+  .box{max-width:560px}
+  .kick{font-size:12.5px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--orange)}
+  h1{font-family:'Playfair Display',serif;font-size:clamp(34px,6vw,56px);font-weight:700;color:var(--ink);line-height:1.05;margin:14px 0 16px}
+  p{font-size:18px;color:var(--muted);margin-bottom:28px}
+  .btns{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+  .btn{display:inline-flex;align-items:center;justify-content:center;font-weight:600;font-size:15px;padding:13px 26px;border-radius:8px;text-decoration:none;border:1.5px solid var(--orange);transition:.15s}
+  .btn-primary{background:var(--orange);color:#fff}.btn-primary:hover{background:var(--orange-dk)}
+  .btn-ghost{background:transparent;color:var(--orange)}.btn-ghost:hover{background:#fff7f2}
+  footer{border-top:1px solid var(--line);text-align:center;padding:22px;font-size:14px;color:var(--muted)}
+  footer a{color:var(--orange);text-decoration:none}
+</style>
+</head>
+<body>
+  <div class="mast"><div class="wrap"><a href="/" class="brand">Jeep<span>Leak</span>Fix</a></div></div>
+  <main>
+    <div class="box">
+      <div class="kick">404 — Page Not Found</div>
+      <h1 class="serif">That page doesn't exist anymore</h1>
+      <p>The link may be out of date — but you're in the right place to get your Jeep leak solved. Head back to the expert guide or browse the answer library.</p>
+      <div class="btns">
+        <a class="btn btn-primary" href="/">Back to JeepLeakFix</a>
+        <a class="btn btn-ghost" href="/answers/">Browse All Answers</a>
+      </div>
+    </div>
+  </main>
+  <footer>
+    Need a hand? <a href="tel:+18285910302">Call / Text +1-828-591-0302</a> · <a href="https://wa.me/18285910302">WhatsApp</a> · <a href="https://leakfixkit.com/">Made in USA</a>
+  </footer>
+</body>
+</html>
