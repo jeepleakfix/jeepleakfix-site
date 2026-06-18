@@ -28,20 +28,51 @@ gtag('config', 'G-P2V2SH3SPG');
 <!-- Cloudflare Turnstile (anti-spam) — explicit render so it works inside the collapsible form -->
 <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit" async defer></script>
 
-<!-- SEO: Person / Service / FAQ schema -->
+<!-- SEO: Organization / WebSite / Person / Service schema -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://jeepleakfix.com/#org",
+      "name": "JeepLeakFix",
+      "alternateName": "JeepLeakFix.com",
+      "url": "https://jeepleakfix.com",
+      "logo": "https://jeepleakfix.com/tony-avatar-2.png",
+      "image": "https://jeepleakfix.com/tony-avatar-2.png",
+      "email": "jeepleakfix@gmail.com",
+      "telephone": "+1-828-591-0302",
+      "founder": {"@id": "https://jeepleakfix.com/#tony"},
+      "description": "Expert Jeep Wrangler and Gladiator water-leak diagnosis and fixes for JK, JL, and Gladiator. Personalized help from Tony, plus US-made body-side weatherstripping kits.",
+      "areaServed": "Worldwide",
+      "sameAs": [
+        "https://leakfixkit.com",
+        "https://wa.me/18285910302"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://jeepleakfix.com/#website",
+      "url": "https://jeepleakfix.com",
+      "name": "JeepLeakFix.com — Jeep Water Leak Expert",
+      "publisher": {"@id": "https://jeepleakfix.com/#org"}
+    },
     {
       "@type": "Person",
       "@id": "https://jeepleakfix.com/#tony",
       "name": "Tony",
       "jobTitle": "Jeep Water Leak Expert",
       "url": "https://jeepleakfix.com",
-      "telephone": "+18285910302",
-      "description": "Globally recognized Jeep Wrangler water leak expert helping JK, JL, and Gladiator owners stop leaks for good.",
-      "sameAs": ["https://wa.me/18285910302"]
+      "image": "https://jeepleakfix.com/tony-avatar-2.png",
+      "telephone": "+1-828-591-0302",
+      "email": "jeepleakfix@gmail.com",
+      "worksFor": {"@id": "https://jeepleakfix.com/#org"},
+      "description": "Jeep water-leak specialist who has personally diagnosed and solved leaks for hundreds of Wrangler and Gladiator owners worldwide. Answers every question submitted to JeepLeakFix.com personally.",
+      "sameAs": [
+        "https://leakfixkit.com",
+        "https://wa.me/18285910302"
+      ]
     },
     {
       "@type": "Service",
