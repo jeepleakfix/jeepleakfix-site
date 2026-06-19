@@ -29,8 +29,8 @@
   .kick{font-size:12.5px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--orange)}
   h1{font-family:'Playfair Display',serif;font-size:clamp(30px,5vw,48px);font-weight:600;color:var(--ink);line-height:1.12;margin-top:12px}
   .dek{font-size:clamp(17px,2.2vw,20px);color:var(--muted);margin-top:16px;max-width:660px;line-height:1.5}
-  .statband{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden;margin:34px 0 8px}
-  .stat{background:var(--paper);padding:20px 18px;text-align:center}
+  .statband{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:34px 0 8px}
+  .stat{background:#fff;border:1.5px solid var(--orange);border-radius:14px;padding:22px 18px;text-align:center;box-shadow:0 8px 24px rgba(224,90,26,.07)}
   .stat .n{font-family:'Playfair Display',serif;font-size:clamp(26px,4vw,38px);font-weight:700;color:var(--orange);line-height:1}
   .stat .l{font-size:12.5px;color:var(--muted);margin-top:8px;line-height:1.35}
   @media(max-width:560px){.statband{grid-template-columns:1fr}}
@@ -54,8 +54,9 @@
   .ctl select,.ctl input{width:100%;font-family:inherit;font-size:15px;border:1.5px solid var(--line);border-radius:10px;padding:12px 13px;background:#fff;color:var(--ink);appearance:none}
   .ctl select:focus,.ctl input:focus{outline:none;border-color:var(--orange)}
   .searchrow{margin-top:14px}
-  .count{margin:20px 0 10px;font-size:15px;color:var(--ink);font-weight:600}
+  .count{margin:22px 0 10px;font-size:17px;color:var(--ink);font-weight:600;display:flex;flex-wrap:wrap;align-items:center;gap:10px}
   .count b{color:var(--orange)}
+  .scrollhint{font-size:12.5px;font-weight:700;color:#fff;background:var(--orange);padding:4px 11px;border-radius:999px;letter-spacing:.3px;white-space:nowrap}
   .results{display:flex;flex-direction:column;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden;max-height:520px;overflow-y:auto}
   .res{display:flex;align-items:center;gap:12px;background:#fff;padding:13px 16px;font-size:14.5px;transition:background .12s}
   .res:hover{background:#fff7f2}
@@ -221,7 +222,8 @@
       return true;
     });
     var cEl=document.getElementById('count');
-    cEl.innerHTML='<b>'+out.length+'</b> Jeep'+(out.length===1?'':'s')+(m||sp||q?' match your search':' in the library');
+    var filtered=(m||sp||q);
+    cEl.innerHTML='<span><b>'+out.length+'</b> Jeep'+(out.length===1?'':'s')+(filtered?' match your search':' in the library')+'</span>'+(filtered?'':'<span class="scrollhint">&darr; Scroll through to find your match</span>');
     var rEl=document.getElementById('results');
     if(!out.length){ rEl.innerHTML='<div class="empty">No Jeeps match that exact combination yet — <a href="https://jeepleakfix.com/ask" style="color:var(--orange);font-weight:600">send me yours</a> and I\'ll add the fix.</div>'; return; }
     rEl.innerHTML=out.map(rowHtml).join('');
