@@ -61,6 +61,30 @@
   footer{background:#16110c;color:rgba(255,255,255,.7);padding:40px 0;font-size:14px;margin-top:30px}
   footer .row{max-width:1080px;margin:0 auto;padding:0 24px;display:flex;flex-wrap:wrap;gap:18px;justify-content:space-between;align-items:center}
   footer a:hover{color:#fff}
+
+  nav a[href$="/guides"]{color:var(--orange);font-weight:600}
+  nav a[href$="/guides"]:hover{color:var(--orange-dk)}
+
+  /* collapsible intake form */
+  .formreveal{max-width:680px;margin:36px auto}
+  .formreveal>summary{list-style:none;cursor:pointer;display:flex;flex-direction:column;align-items:center;text-align:center;gap:7px;background:#fff;border:1.5px solid var(--orange);border-radius:16px;padding:20px 26px;box-shadow:0 12px 34px rgba(0,0,0,.06);transition:.15s}
+  .formreveal>summary:hover{background:#fff7f2}
+  .formreveal>summary::-webkit-details-marker{display:none}
+  .formreveal .fr-label{font-weight:700;font-size:17px;color:var(--ink)}
+  .formreveal .fr-hint{font-weight:600;font-size:14px;color:var(--orange);display:inline-flex;align-items:center;gap:7px}
+  .formreveal .fr-hint::after{content:'\25BE';font-size:12px}
+  .formreveal[open] .fr-hint::after{content:'\25B4'}
+  .formreveal[open]>summary{border-radius:16px 16px 0 0}
+  .fr-card{background:#fff;border:1.5px solid var(--orange);border-top:none;border-radius:0 0 18px 18px;padding:30px 34px 34px;box-shadow:0 12px 34px rgba(0,0,0,.06)}
+  .fr-card .frow{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .fr-card .field{margin-top:14px}
+  .fr-card .field label{display:block;font-size:12px;font-weight:600;letter-spacing:.4px;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+  .fr-card .field input,.fr-card .field select,.fr-card .field textarea{width:100%;font-family:inherit;font-size:15px;border:1.5px solid var(--line);border-radius:10px;padding:12px 13px;appearance:none;background:#fff;color:var(--ink)}
+  .fr-card .field textarea{min-height:90px;resize:vertical}
+  .fr-card .field input:focus,.fr-card .field select:focus,.fr-card .field textarea:focus{outline:none;border-color:var(--orange)}
+  .fr-card .fr-send{display:block;width:100%;margin-top:22px;padding:16px;border:1.5px solid var(--orange);border-radius:8px;background:var(--orange);color:#fff;font-family:inherit;font-weight:700;font-size:20px;letter-spacing:.5px;cursor:pointer;transition:.15s}
+  .fr-card .fr-send:hover{background:var(--orange-dk)}
+  @media(max-width:600px){.fr-card .frow{grid-template-columns:1fr}}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://jeepleakfix.com/#org", "name": "JeepLeakFix", "url": "https://jeepleakfix.com", "logo": "https://jeepleakfix.com/tony-avatar-2.png", "sameAs": ["https://leakfixkit.com", "https://www.youtube.com/@jeepleakfix", "https://www.tiktok.com/@jeepdrip", "https://www.facebook.com/DRYJEEP", "https://www.instagram.com/leakfixkit", "https://wa.me/18285910302"]}, {"@type": "Person", "@id": "https://jeepleakfix.com/#tony", "name": "Tony", "jobTitle": "Jeep Water Leak Expert", "url": "https://jeepleakfix.com", "image": "https://jeepleakfix.com/tony-avatar-2.png", "description": "Jeep water-leak specialist who has personally diagnosed and solved leaks for hundreds of Wrangler and Gladiator owners worldwide.", "sameAs": ["https://leakfixkit.com", "https://www.youtube.com/@jeepleakfix", "https://www.tiktok.com/@jeepdrip", "https://www.facebook.com/DRYJEEP", "https://www.instagram.com/leakfixkit", "https://wa.me/18285910302"]}, {"@type": "Article", "@id": "https://jeepleakfix.com/jeep-leak-expert#article", "headline": "Talk to a real Jeep water-leak expert", "description": "Every Jeep leaks from a slightly different spot. I'm Tony \u2014 I've personally solved water leaks for hundreds of Wrangler and Gladiator owners worldwide. Tell me about yours.", "mainEntityOfPage": "https://jeepleakfix.com/jeep-leak-expert", "author": {"@id": "https://jeepleakfix.com/#tony"}, "publisher": {"@id": "https://jeepleakfix.com/#org"}, "image": "https://jeepleakfix.com/tony-avatar-2.png", "datePublished": "2026-06-18", "dateModified": "2026-06-18", "about": "Jeep Wrangler and Gladiator water leaks"}]}</script>
 </head>
@@ -76,14 +100,49 @@
     <h1 class="serif">Talk to a real Jeep water-leak expert</h1>
     <div class="byline"><img src="https://jeepleakfix.com/tony-avatar-2.png" alt="Tony, Jeep water-leak expert"><div class="bl"><b>By Tony</b> — Jeep Water-Leak Expert<br><span>Updated June 2026</span></div></div>
   </div>
-  <article><div class="shortans"><div class="lbl">Short answer</div><p>Every Jeep leaks from a slightly different spot — so generic advice only gets you so far. I'm <strong>Tony</strong>, and I've personally diagnosed and fixed water leaks for hundreds of Wrangler and Gladiator owners around the world. Tell me about yours and I'll reply personally with the exact fix.</p></div><h2 class="serif">Why a real expert beats guessing</h2><p>I've seen the same leaks over and over — A-pillars, freedom panels, doors, tailgates, footwells. Tell me where yours shows up and I can pinpoint the entry point and the fix without you throwing parts (or money) at it.</p><h2 class="serif">How it works</h2><ol class="steps"><li>Send your year, model, doors, roof type, and where it leaks.</li><li>I reply personally — no AI, no call center — with the recommended fix for your exact Jeep.</li><li>If you want the body-side weatherstripping kit I make, it's there when you're ready.</li></ol><h2 class="serif">What it costs</h2><p>The advice is free. The kit (if you choose it) is backed by a 60-day money-back guarantee. Either way, you get a straight answer from the person who's solved this hundreds of times.</p><div class="kitnote">Reach me directly: <a href="tel:+18285910302">call or text +1-828-591-0302</a>, <a href="https://wa.me/18285910302">WhatsApp</a>, or <a href="mailto:jeepleakfix@gmail.com">jeepleakfix@gmail.com</a>.</div><div style="border-top:1px solid var(--line);margin-top:30px;padding-top:22px"><div style="font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#a59a8c">Continue Reading</div><a href="https://jeepleakfix.com/answers/" style="display:block"><div style="font-family:'Playfair Display',serif;font-size:21px;color:var(--ink);font-weight:600;margin:7px 0 4px">Questions Jeepers have sent me <span style="color:var(--orange)">&rarr;</span></div><div style="font-size:15.5px;color:var(--muted);line-height:1.55">Real leaks, real Jeeps, solved one at a time — see how other owners traced and fixed theirs.</div></a></div></article>
+  <article><div class="shortans"><div class="lbl">Short answer</div><p>Every Jeep leaks from a slightly different spot — so generic advice only gets you so far. I'm <strong>Tony</strong>, and I've personally diagnosed and fixed water leaks for hundreds of Wrangler and Gladiator owners around the world. Tell me about yours and I'll reply personally with the exact fix.</p></div><h2 class="serif">Why a real expert beats guessing</h2><p>I've seen the same leaks over and over — A-pillars, freedom panels, doors, tailgates, footwells. Tell me where yours shows up and I can pinpoint the entry point and the fix without you throwing parts (or money) at it.</p><h2 class="serif">How it works</h2><ol class="steps"><li>Send your year, model, doors, roof type, and where it leaks.</li><li>I reply personally — no AI, no call center — with the recommended fix for your exact Jeep.</li><li>If you want the body-side weatherstripping kit I make, it's there when you're ready.</li></ol><div style="text-align:center;margin:40px 0 6px"><h2 class="serif" style="margin:0 0 6px">Tell me about your Jeep</h2><p style="color:var(--muted);margin:0">The advice is free — fill out your details and I'll reply personally with your fix.</p></div><details class="formreveal">
+  <summary><span class="fr-label">Get your personalized fix</span><span class="fr-hint">Fill out your Jeep's details</span></summary>
+  <form class="fr-card" name="jeep-leak-intake" method="POST" action="https://script.google.com/macros/s/AKfycbw3RSRlXLUFoIM9eb82AZLuOLLQHgEEE9Ju0s6bW_oJeZPNcowqYbryNP_W7KII_4g2/exec">
+    <input type="hidden" name="form-name" value="jeep-leak-intake">
+    <div aria-hidden="true" style="position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden"><label>Company website (leave blank)<input type="text" name="company_website" tabindex="-1" autocomplete="off"></label></div>
+    <input type="hidden" name="form_loaded_at" class="fr-loaded" value="">
+    <div class="frow">
+      <div class="field"><label>Year</label><select name="year" required><option value="" disabled selected>Select year</option><option>2007</option><option>2008</option><option>2009</option><option>2010</option><option>2011</option><option>2012</option><option>2013</option><option>2014</option><option>2015</option><option>2016</option><option>2017</option><option>2018</option><option>2019</option><option>2020</option><option>2021</option><option>2022</option><option>2023</option><option>2024</option><option>2025</option><option>2026</option></select></div>
+      <div class="field"><label>Jeep Model</label><select name="jeep_model" required><option value="" disabled selected>Select model</option><option>JK</option><option>JL</option><option>Gladiator</option></select></div>
+    </div>
+    <div class="frow">
+      <div class="field"><label>Number of Doors</label><select name="number_of_doors" required><option value="" disabled selected>Select doors</option><option>2</option><option>4</option></select></div>
+      <div class="field"><label>Roof Type</label><select name="roof_type" required><option value="" disabled selected>Select roof type</option><option>Hardtop</option><option>Softtop</option><option>Sky One-Touch</option><option>Bestop Sunrider</option></select></div>
+    </div>
+    <div class="frow">
+      <div class="field"><label>Where Does It Leak?</label><select name="leak_location" required><option value="" disabled selected>Select leak location</option><option>Driver Door</option><option>Passenger Door</option><option>Back Door Driver Side</option><option>Back Door Passenger Side</option><option>Freedom Panels</option><option>Cargo Door</option><option>Not Sure</option></select></div>
+      <div class="field"><label>When Does It Leak?</label><select name="leak_timing" required><option value="" disabled selected>Select timing</option><option>Heavy Rain</option><option>Light Rain</option><option>Carwash</option><option>All of the Above</option></select></div>
+    </div>
+    <div class="field"><label>Additional Details</label><textarea name="additional_details" placeholder="Tell me anything else about your leak — or leave blank if your selections cover it."></textarea></div>
+    <div class="frow">
+      <div class="field"><label>Your Name</label><input type="text" name="name" placeholder="Enter your name" required></div>
+      <div class="field"><label>Your Email — I'll Reply With Your Solution ASAP</label><input type="email" name="email" placeholder="you@email.com" required></div>
+    </div>
+    <div style="display:flex;justify-content:center;margin-top:18px"><div class="fr-ts"></div></div>
+    <button type="submit" class="fr-send">Send</button>
+  </form>
+</details><div class="kitnote">Reach me directly: <a href="tel:+18285910302">call or text +1-828-591-0302</a>, <a href="https://wa.me/18285910302">WhatsApp</a>, or <a href="mailto:jeepleakfix@gmail.com">jeepleakfix@gmail.com</a>.</div><div style="border-top:1px solid var(--line);margin-top:30px;padding-top:22px"><div style="font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#a59a8c">Continue Reading</div><a href="https://jeepleakfix.com/answers/" style="display:block"><div style="font-size:21px;color:var(--ink);font-weight:700;margin:7px 0 4px">Questions Jeepers have sent me <span style="color:var(--orange)">&rarr;</span></div><div style="font-size:15.5px;color:var(--muted);line-height:1.55">Real leaks, real Jeeps, solved one at a time — see how other owners traced and fixed theirs.</div></a></div></article>
 </div>
 <footer><div class="row">
   <div class="brand" style="color:#fff;font-size:18px">Jeep<span>Leak</span>Fix</div>
   <div style="display:flex;gap:20px;flex-wrap:wrap">
-    <a href="https://jeepleakfix.com/ask">Request Expert Diagnosis</a><a href="https://jeepleakfix.com/install">Installation</a><a href="https://jeepleakfix.com/answers/">All Answers</a><a href="https://jeepleakfix.com/guides">Leak Guides</a><a href="https://jeepleakfix.com/about">About</a><a href="https://jeepleakfix.com/contact">Contact</a><a href="https://jeepleakfix.com/privacy">Privacy</a><a href="https://jeepleakfix.com/terms">Terms</a><a href="https://leakfixkit.com/">Made in USA</a>
+    <a href="https://jeepleakfix.com/ask">Request Expert Diagnosis</a><a href="https://jeepleakfix.com/install">Installation</a><a href="https://jeepleakfix.com/answers/">All Answers</a><a href="https://jeepleakfix.com/guides">Leak Guides</a><a href="https://jeepleakfix.com/about">About</a><a href="https://jeepleakfix.com/contact">Contact</a><a href="https://jeepleakfix.com/privacy">Privacy</a><a href="https://jeepleakfix.com/terms">Terms</a><a href="https://leakfixkit.com/">Get It Delivered</a>
   </div>
   <div>&copy; 2026 JeepLeakFix.com</div>
 </div></footer>
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit" async defer></script>
+<script>
+(function(){
+  var ts=document.querySelector('.fr-loaded'); if(ts) ts.value=String(Date.now());
+  var d=document.querySelector('.formreveal'); var done=false;
+  function rt(){ if(done) return; if(window.turnstile){ try{ turnstile.render('.fr-ts',{sitekey:'0x4AAAAAADXQwfZPRbNQRqzb',theme:'light'}); done=true; }catch(e){ setTimeout(rt,300); } } else { setTimeout(rt,300); } }
+  if(d){ d.addEventListener('toggle', function(){ if(d.open) rt(); }); }
+})();
+</script>
 </body>
 </html>

@@ -40,12 +40,36 @@
   footer{background:#16110c;color:rgba(255,255,255,.7);padding:40px 0;font-size:14px;margin-top:30px}
   footer .row{max-width:1080px;margin:0 auto;padding:0 24px;display:flex;flex-wrap:wrap;gap:18px;justify-content:space-between;align-items:center}
   footer a:hover{color:#fff}
+
+  nav a[href$="/guides"]{color:var(--orange);font-weight:600}
+  nav a[href$="/guides"]:hover{color:var(--orange-dk)}
+
+  /* collapsible intake form */
+  .formreveal{max-width:680px;margin:36px auto}
+  .formreveal>summary{list-style:none;cursor:pointer;display:flex;flex-direction:column;align-items:center;text-align:center;gap:7px;background:#fff;border:1.5px solid var(--orange);border-radius:16px;padding:20px 26px;box-shadow:0 12px 34px rgba(0,0,0,.06);transition:.15s}
+  .formreveal>summary:hover{background:#fff7f2}
+  .formreveal>summary::-webkit-details-marker{display:none}
+  .formreveal .fr-label{font-weight:700;font-size:17px;color:var(--ink)}
+  .formreveal .fr-hint{font-weight:600;font-size:14px;color:var(--orange);display:inline-flex;align-items:center;gap:7px}
+  .formreveal .fr-hint::after{content:'\25BE';font-size:12px}
+  .formreveal[open] .fr-hint::after{content:'\25B4'}
+  .formreveal[open]>summary{border-radius:16px 16px 0 0}
+  .fr-card{background:#fff;border:1.5px solid var(--orange);border-top:none;border-radius:0 0 18px 18px;padding:30px 34px 34px;box-shadow:0 12px 34px rgba(0,0,0,.06)}
+  .fr-card .frow{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .fr-card .field{margin-top:14px}
+  .fr-card .field label{display:block;font-size:12px;font-weight:600;letter-spacing:.4px;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+  .fr-card .field input,.fr-card .field select,.fr-card .field textarea{width:100%;font-family:inherit;font-size:15px;border:1.5px solid var(--line);border-radius:10px;padding:12px 13px;appearance:none;background:#fff;color:var(--ink)}
+  .fr-card .field textarea{min-height:90px;resize:vertical}
+  .fr-card .field input:focus,.fr-card .field select:focus,.fr-card .field textarea:focus{outline:none;border-color:var(--orange)}
+  .fr-card .fr-send{display:block;width:100%;margin-top:22px;padding:16px;border:1.5px solid var(--orange);border-radius:8px;background:var(--orange);color:#fff;font-family:inherit;font-weight:700;font-size:20px;letter-spacing:.5px;cursor:pointer;transition:.15s}
+  .fr-card .fr-send:hover{background:var(--orange-dk)}
+  @media(max-width:600px){.fr-card .frow{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 <div class="mast"><div class="row">
   <a href="/" class="brand">Jeep<span>Leak</span>Fix</a>
-  <nav class="nav"><a href="/#article">The Guide</a><a href="/#diagnose">Ask the Expert</a><a href="/answers/">All Answers</a><a href="/contact">Contact</a></nav>
+  <nav class="nav"><a href="/guides">Leak Guide</a><a href="/ask">Ask Tony</a></nav>
 </div></div>
 
 <div class="hero"><div class="wide">
@@ -66,22 +90,50 @@
   <h2 class="serif">How I can help you</h2>
   <p>Every Jeep leaks from different locations. Tell me your year, model, and where yours is leaking, and I'll reply personally with the recommended fix for your exact Jeep. If you want the weatherstripping kit I make, it's available at <a href="https://leakfixkit.com/" style="color:var(--orange);font-weight:600;text-decoration:underline">leakfixkit.com</a>.</p>
 
-  <div class="cta">
-    <h3 class="serif">Got a leak? Let's solve it.</h3>
-    <p style="color:var(--muted)">Reach me directly — I answer every message personally.</p>
-    <div class="btns">
-      <a class="btn btn-primary" href="/#diagnose">Get Your Expert Diagnosis</a>
-      <a class="btn btn-ghost" href="/contact">Contact Tony</a>
+  <div style="text-align:center;margin:44px 0 6px"><h2 class="serif" style="margin:0 0 6px">Got a leak? Let's solve it.</h2><p style="color:var(--muted);margin:0">Fill out your Jeep's details and I'll reply personally with your fix.</p></div><details class="formreveal">
+  <summary><span class="fr-label">Get your personalized fix</span><span class="fr-hint">Fill out your Jeep's details</span></summary>
+  <form class="fr-card" name="jeep-leak-intake" method="POST" action="https://script.google.com/macros/s/AKfycbw3RSRlXLUFoIM9eb82AZLuOLLQHgEEE9Ju0s6bW_oJeZPNcowqYbryNP_W7KII_4g2/exec">
+    <input type="hidden" name="form-name" value="jeep-leak-intake">
+    <div aria-hidden="true" style="position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden"><label>Company website (leave blank)<input type="text" name="company_website" tabindex="-1" autocomplete="off"></label></div>
+    <input type="hidden" name="form_loaded_at" class="fr-loaded" value="">
+    <div class="frow">
+      <div class="field"><label>Year</label><select name="year" required><option value="" disabled selected>Select year</option><option>2007</option><option>2008</option><option>2009</option><option>2010</option><option>2011</option><option>2012</option><option>2013</option><option>2014</option><option>2015</option><option>2016</option><option>2017</option><option>2018</option><option>2019</option><option>2020</option><option>2021</option><option>2022</option><option>2023</option><option>2024</option><option>2025</option><option>2026</option></select></div>
+      <div class="field"><label>Jeep Model</label><select name="jeep_model" required><option value="" disabled selected>Select model</option><option>JK</option><option>JL</option><option>Gladiator</option></select></div>
     </div>
-  </div>
+    <div class="frow">
+      <div class="field"><label>Number of Doors</label><select name="number_of_doors" required><option value="" disabled selected>Select doors</option><option>2</option><option>4</option></select></div>
+      <div class="field"><label>Roof Type</label><select name="roof_type" required><option value="" disabled selected>Select roof type</option><option>Hardtop</option><option>Softtop</option><option>Sky One-Touch</option><option>Bestop Sunrider</option></select></div>
+    </div>
+    <div class="frow">
+      <div class="field"><label>Where Does It Leak?</label><select name="leak_location" required><option value="" disabled selected>Select leak location</option><option>Driver Door</option><option>Passenger Door</option><option>Back Door Driver Side</option><option>Back Door Passenger Side</option><option>Freedom Panels</option><option>Cargo Door</option><option>Not Sure</option></select></div>
+      <div class="field"><label>When Does It Leak?</label><select name="leak_timing" required><option value="" disabled selected>Select timing</option><option>Heavy Rain</option><option>Light Rain</option><option>Carwash</option><option>All of the Above</option></select></div>
+    </div>
+    <div class="field"><label>Additional Details</label><textarea name="additional_details" placeholder="Tell me anything else about your leak — or leave blank if your selections cover it."></textarea></div>
+    <div class="frow">
+      <div class="field"><label>Your Name</label><input type="text" name="name" placeholder="Enter your name" required></div>
+      <div class="field"><label>Your Email — I'll Reply With Your Solution ASAP</label><input type="email" name="email" placeholder="you@email.com" required></div>
+    </div>
+    <div style="display:flex;justify-content:center;margin-top:18px"><div class="fr-ts"></div></div>
+    <button type="submit" class="fr-send">Send</button>
+  </form>
+</details>
 </div></article>
 
 <footer><div class="row">
   <div class="brand" style="color:#fff;font-size:18px">Jeep<span>Leak</span>Fix</div>
   <div style="display:flex;gap:20px;flex-wrap:wrap">
-    <a href="/ask">Request Expert Diagnosis</a><a href="/install">Installation</a><a href="/answers/">All Answers</a><a href="/guides">Leak Guides</a><a href="/about">About</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="https://leakfixkit.com/">Made in USA</a>
+    <a href="/ask">Request Expert Diagnosis</a><a href="/install">Installation</a><a href="/answers/">All Answers</a><a href="/guides">Leak Guides</a><a href="/about">About</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="https://leakfixkit.com/">Get It Delivered</a>
   </div>
   <div>© 2026 JeepLeakFix.com</div>
 </div></footer>
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit" async defer></script>
+<script>
+(function(){
+  var ts=document.querySelector('.fr-loaded'); if(ts) ts.value=String(Date.now());
+  var d=document.querySelector('.formreveal'); var done=false;
+  function rt(){ if(done) return; if(window.turnstile){ try{ turnstile.render('.fr-ts',{sitekey:'0x4AAAAAADXQwfZPRbNQRqzb',theme:'light'}); done=true; }catch(e){ setTimeout(rt,300); } } else { setTimeout(rt,300); } }
+  if(d){ d.addEventListener('toggle', function(){ if(d.open) rt(); }); }
+})();
+</script>
 </body>
 </html>
