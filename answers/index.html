@@ -112,12 +112,44 @@
   footer .row{max-width:1080px;margin:0 auto;padding:0 24px;display:flex;flex-wrap:wrap;gap:18px;justify-content:space-between;align-items:center}
   footer a:hover{color:#fff}
   @media(max-width:560px){.controls{grid-template-columns:1fr}.bar{grid-template-columns:96px 1fr 44px;gap:8px}}
+  .menu-btn{display:flex;flex-direction:column;justify-content:center;gap:5px;width:42px;height:42px;border:none;background:none;cursor:pointer;padding:10px;border-radius:8px}
+  .menu-btn:hover{background:rgba(0,0,0,.06)}
+  .menu-btn span{display:block;height:2.5px;width:100%;background:var(--ink);border-radius:2px;transition:.2s}
+  body.menu-open .menu-btn span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
+  body.menu-open .menu-btn span:nth-child(2){opacity:0}
+  body.menu-open .menu-btn span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
+  .mast .row,.mast .wide{position:relative}
+  .mast .menu-panel{position:absolute;top:calc(100% + 6px);right:24px;width:250px;background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:0 18px 50px rgba(0,0,0,.14);padding:10px;display:flex;flex-direction:column;opacity:0;visibility:hidden;transform:translateY(-8px);transition:.18s ease;z-index:60}
+  body.menu-open .mast .menu-panel{opacity:1;visibility:visible;transform:translateY(0)}
+  .mast .menu-panel a{padding:11px 14px;font-size:15px;font-weight:500;color:var(--ink);border-radius:8px;text-align:left}
+  .mast .menu-panel a:hover{background:var(--sand);color:var(--orange)}
+  .mast .menu-panel .menu-shop{color:var(--orange);font-weight:700}
+  .menu-div{height:1px;background:var(--line);margin:7px 6px}
+  .mast .menu-panel .menu-fine{font-size:13px;color:var(--muted);font-weight:400;padding:8px 14px}
 </style>
 </head>
 <body>
 <div class="mast"><div class="row">
   <a href="https://jeepleakfix.com/" class="brand">Jeep<span>Leak</span>Fix</a>
-  <nav class="nav"><a href="https://jeepleakfix.com/guides">Leak Guide</a><a href="https://jeepleakfix.com/ask">Ask Tony</a></nav>
+  <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="menuPanel">
+    <span></span><span></span><span></span>
+  </button>
+  <nav class="menu-panel" id="menuPanel" aria-hidden="true">
+    <a href="/guides">Leak Guide</a>
+    <a href="/answers/">Leak Data</a>
+    <a href="/faqs">FAQs</a>
+    <a href="/ask">Ask Tony</a>
+    <a href="/install">Installation</a>
+    <a href="/about">About</a>
+    <a href="/contact">Contact</a>
+    <span class="menu-div"></span>
+    <a class="menu-shop" href="https://leakfixkit.com/">Shop Leak Fix Kits &rarr;</a>
+    <a href="tel:+18285910302">Call / Text</a>
+    <a href="https://wa.me/18285910302">WhatsApp</a>
+    <span class="menu-div"></span>
+    <a class="menu-fine" href="/privacy">Privacy</a>
+    <a class="menu-fine" href="/terms">Terms</a>
+  </nav>
 </div></div>
 
 <div class="wrap">
@@ -161,10 +193,10 @@
 
 <footer><div class="row">
   <div class="brand" style="color:#fff;font-size:18px">Jeep<span>Leak</span>Fix</div>
-  <div style="display:flex;gap:20px;flex-wrap:wrap">
-    <a href="https://jeepleakfix.com/ask">Request Expert Diagnosis</a><a href="https://jeepleakfix.com/install">Installation</a><a href="https://jeepleakfix.com/answers/">Leak Data</a><a href="https://jeepleakfix.com/faqs">FAQs</a><a href="https://jeepleakfix.com/guides">Leak Guides</a><a href="https://jeepleakfix.com/about">About</a><a href="https://jeepleakfix.com/contact">Contact</a><a href="https://jeepleakfix.com/privacy">Privacy</a><a href="https://jeepleakfix.com/terms">Terms</a><a href="https://leakfixkit.com/">Leak Fix Kits</a>
+  <div style="display:flex;gap:22px;flex-wrap:wrap">
+    <a href="https://leakfixkit.com/">Leak Fix Kits</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a>
   </div>
-  <div>&copy; 2026 JeepLeakFix.com · Global Expert Support</div>
+  <div>&copy; 2026 JeepLeakFix.com</div>
 </div></footer>
 
 <script>
@@ -327,6 +359,17 @@
     document.getElementById('bars').innerHTML='<div class="empty">Couldn\'t load the data right now. <a href="https://jeepleakfix.com/ask" style="color:var(--orange);font-weight:600">Ask Tony directly →</a></div>';
   });
   initQuiz();
+})();
+</script>
+
+<script>/*menujs*/
+(function(){
+  var b=document.getElementById('menuBtn'),p=document.getElementById('menuPanel');
+  if(!b||!p)return;
+  function set(o){document.body.classList.toggle('menu-open',o);b.setAttribute('aria-expanded',o);p.setAttribute('aria-hidden',!o);}
+  b.addEventListener('click',function(e){e.stopPropagation();set(!document.body.classList.contains('menu-open'));});
+  document.addEventListener('click',function(e){if(document.body.classList.contains('menu-open')&&!p.contains(e.target)&&!b.contains(e.target))set(false);});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false);});
 })();
 </script>
 </body>
