@@ -150,7 +150,7 @@
     var model=/gladiator/i.test(s)?'Gladiator':(/\bJL\b/.test(s)?'JL':(/\bJK\b/.test(s)?'JK':null));
     var dm=s.match(/(\d)\s*-?\s*Door/i); var doors=dm?parseInt(dm[1],10):null;
     var roof=null; ROOFS.forEach(function(r){ if(s.toLowerCase().indexOf(r.toLowerCase())>=0) roof=r; });
-    return {year:year,model:model,doors:doors,roof:roof,jeep:s,spot:String(d.category||d.location||'').trim(),url:d.url||'#',timing:d.timing||''};
+    return {year:year,model:model,doors:doors,roof:roof,jeep:s,spot:String(d.location||d.category||'').trim(),url:d.url||'#',timing:d.timing||''};
   }
   function valid(p){
     if(!p.year||!p.model) return false;
