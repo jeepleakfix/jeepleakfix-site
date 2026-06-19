@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Find the Jeep That Matches Yours — Real Leak Q&A Library | JeepLeakFix.com</title>
+<meta name="description" content="Search 148 real Jeep water-leak diagnoses by model, roof, door, and leak spot. Find the Jeep that matches yours and read the exact fix Tony gave each owner.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://jeepleakfix.com/faqs">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-P2V2SH3SPG"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-P2V2SH3SPG');</script>
+<style>
+  :root{--orange:#E05A1A;--orange-dk:#bf440e;--ink:#1d1813;--body:#332c25;--muted:#7a7066;--line:#e9e1d7;--paper:#fcfaf6;--sand:#f4ede3}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Inter',sans-serif;color:var(--body);background:var(--paper);line-height:1.7}
+  .serif{font-family:'Playfair Display',Georgia,serif}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:880px;margin:0 auto;padding:0 24px}
+  .mast{position:sticky;top:0;z-index:40;background:rgba(252,250,246,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  .mast .row{max-width:1080px;margin:0 auto;padding:0 24px;height:60px;display:flex;align-items:center;justify-content:space-between}
+  .brand{font-weight:800;font-size:19px;color:var(--ink);letter-spacing:-.3px}.brand span{color:var(--orange)}
+  .nav{display:flex;gap:24px;font-size:14px;font-weight:500;color:var(--muted)}.nav a:hover{color:var(--ink)}
+  nav a[href$="/guides"]{color:var(--orange);font-weight:600}
+  nav a[href$="/guides"]:hover{color:var(--orange-dk)}
+  @media(max-width:640px){.nav{display:none}}
+  .hero{padding:50px 0 6px}
+  .kick{font-size:12.5px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--orange)}
+  h1{font-family:'Playfair Display',serif;font-size:clamp(30px,5vw,46px);font-weight:600;color:var(--ink);line-height:1.12;margin-top:12px}
+  .dek{font-size:clamp(17px,2.2vw,20px);color:var(--muted);margin-top:16px;max-width:660px;line-height:1.5}
+  .dek b{color:var(--ink);font-weight:600}
+  section{margin:40px 0}
+  h2{font-family:'Playfair Display',serif;font-size:clamp(22px,3vw,30px);font-weight:600;color:var(--ink);margin-bottom:6px}
+  .sub{color:var(--muted);font-size:15.5px;margin-bottom:22px;max-width:640px}
+  .finder{background:#fff;border:1.5px solid var(--orange);border-radius:18px;padding:26px 26px 30px;box-shadow:0 12px 34px rgba(0,0,0,.06)}
+  .controls{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .ctl label{display:block;font-size:11.5px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+  .ctl select,.ctl input{width:100%;font-family:inherit;font-size:15px;border:1.5px solid var(--line);border-radius:10px;padding:12px 13px;background:#fff;color:var(--ink);appearance:none}
+  .ctl select:focus,.ctl input:focus{outline:none;border-color:var(--orange)}
+  .searchrow{margin-top:14px}
+  .count{margin:22px 0 10px;font-size:17px;color:var(--ink);font-weight:600;display:flex;flex-wrap:wrap;align-items:center;gap:10px}
+  .count b{color:var(--orange)}
+  .scrollhint{font-size:12.5px;font-weight:700;color:#fff;background:var(--orange);padding:4px 11px;border-radius:999px;letter-spacing:.3px;white-space:nowrap}
+  .results{display:flex;flex-direction:column;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden;max-height:560px;overflow-y:auto}
+  .res{display:flex;align-items:center;gap:12px;background:#fff;padding:13px 16px;font-size:14.5px;transition:background .12s}
+  .res:hover{background:#fff7f2}
+  .res .jeep{font-weight:600;color:var(--ink)}
+  .res .spot{color:var(--muted);font-size:13px}
+  .res .arrow{margin-left:auto;color:var(--orange);font-weight:700;flex-shrink:0}
+  .res .meta{display:flex;flex-direction:column;min-width:0}
+  .empty{background:#fff;padding:26px;text-align:center;color:var(--muted);font-size:15px}
+  .loading{padding:30px;text-align:center;color:var(--muted)}
+  .cta{background:var(--sand);border-radius:18px;padding:34px;text-align:center;margin:50px 0}
+  .cta h2{margin-bottom:8px}
+  .cta p{color:var(--muted);max-width:520px;margin:0 auto 20px}
+  .btns{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+  .btn{display:inline-flex;align-items:center;justify-content:center;font-weight:600;font-size:15px;padding:14px 26px;border-radius:8px;border:1.5px solid var(--orange);transition:.15s}
+  .btn-primary{background:var(--orange);color:#fff}.btn-primary:hover{background:var(--orange-dk)}
+  .btn-ghost{background:transparent;color:var(--orange)}.btn-ghost:hover{background:#fff}
+  footer{background:#16110c;color:rgba(255,255,255,.7);padding:40px 0;font-size:14px;margin-top:30px}
+  footer .row{max-width:1080px;margin:0 auto;padding:0 24px;display:flex;flex-wrap:wrap;gap:18px;justify-content:space-between;align-items:center}
+  footer a:hover{color:#fff}
+  @media(max-width:560px){.controls{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="mast"><div class="row">
+  <a href="https://jeepleakfix.com/" class="brand">Jeep<span>Leak</span>Fix</a>
+  <nav class="nav"><a href="https://jeepleakfix.com/guides">Leak Guide</a><a href="https://jeepleakfix.com/answers/">Leak Data</a><a href="https://jeepleakfix.com/ask">Ask Tony</a></nav>
+</div></div>
+
+<div class="wrap">
+  <div class="hero">
+    <div class="kick">The Q&amp;A Library</div>
+    <h1 class="serif">Find the Jeep that matches yours</h1>
+    <p class="dek">Every leak a Jeeper has sent me, kept on record — <b>148 real diagnoses</b> and counting. Pick your model and where it leaks, or type your year, and read the exact fix I gave an owner just like you.</p>
+  </div>
+
+  <section>
+    <div class="finder">
+      <div class="controls">
+        <div class="ctl"><label>Model</label>
+          <select id="fModel"><option value="">All models</option><option>JK</option><option>JL</option><option>Gladiator</option></select>
+        </div>
+        <div class="ctl"><label>Where it leaks</label>
+          <select id="fSpot"><option value="">Anywhere</option><option value="Driver Door">Driver Door</option><option value="Passenger Door">Passenger Door</option><option value="__rear">Rear / Back Doors</option><option value="Freedom Panels">Freedom Panels</option><option value="Cargo Door">Cargo Door</option><option value="Not Sure">Not Sure</option></select>
+        </div>
+      </div>
+      <div class="ctl searchrow"><label>Search</label><input id="fSearch" type="text" placeholder="Type a year, model, roof, or leak spot…"></div>
+      <div class="count" id="count"></div>
+      <div class="results" id="results"><div class="loading">Loading the library…</div></div>
+    </div>
+  </section>
+
+  <div class="cta">
+    <h2 class="serif">Found your match — now get your kit</h2>
+    <p>Take the 30-second match on the Leak Data page and I'll route you to the exact body-side seal kit for your model. Or send me your details and I'll reply personally.</p>
+    <div class="btns">
+      <a class="btn btn-primary" href="https://jeepleakfix.com/answers/">Find My Kit</a>
+      <a class="btn btn-ghost" href="https://jeepleakfix.com/ask">Ask Tony Directly</a>
+    </div>
+  </div>
+</div>
+
+<footer><div class="row">
+  <div class="brand" style="color:#fff;font-size:18px">Jeep<span>Leak</span>Fix</div>
+  <div style="display:flex;gap:20px;flex-wrap:wrap">
+    <a href="https://jeepleakfix.com/ask">Request Expert Diagnosis</a><a href="https://jeepleakfix.com/install">Installation</a><a href="https://jeepleakfix.com/answers/">Leak Data</a><a href="https://jeepleakfix.com/faqs">FAQs</a><a href="https://jeepleakfix.com/guides">Leak Guides</a><a href="https://jeepleakfix.com/about">About</a><a href="https://jeepleakfix.com/contact">Contact</a><a href="https://jeepleakfix.com/privacy">Privacy</a><a href="https://jeepleakfix.com/terms">Terms</a><a href="https://leakfixkit.com/">Leak Fix Kits</a>
+  </div>
+  <div>&copy; 2026 JeepLeakFix.com · Global Expert Support</div>
+</div></footer>
+
+<script>
+(function(){
+  var ROOFS=['Hardtop','Softtop','Sky One-Touch','Bestop Sunrider'];
+  function parse(d){
+    var s=String(d.jeep||'');
+    var ym=s.match(/\b(19|20)\d\d\b/); var year=ym?parseInt(ym[0],10):null;
+    var model=/gladiator/i.test(s)?'Gladiator':(/\bJL\b/.test(s)?'JL':(/\bJK\b/.test(s)?'JK':null));
+    var dm=s.match(/(\d)\s*-?\s*Door/i); var doors=dm?parseInt(dm[1],10):null;
+    var roof=null; ROOFS.forEach(function(r){ if(s.toLowerCase().indexOf(r.toLowerCase())>=0) roof=r; });
+    return {year:year,model:model,doors:doors,roof:roof,jeep:s,spot:String(d.location||d.category||'').trim(),url:d.url||'#',timing:d.timing||''};
+  }
+  function valid(p){
+    if(!p.year||!p.model) return false;
+    if(p.model==='JK' && (p.year<2007||p.year>2018)) return false;
+    if(p.model==='JL' && (p.year<2018||p.year>2026)) return false;
+    if(p.model==='Gladiator' && (p.year<2020||p.year>2026)) return false;
+    if(p.model==='Gladiator' && p.doors===2) return false;
+    if(p.model==='JK' && p.roof==='Sky One-Touch') return false;
+    return true;
+  }
+  var isRear=function(spot){return /back door/i.test(spot);};
+  var ALL=[];
+
+  function rowHtml(p){
+    return '<a class="res" href="'+p.url+'"><div class="meta"><span class="jeep">'+esc(p.jeep)+'</span><span class="spot">'+esc(p.spot)+(p.timing?' · '+esc(p.timing):'')+'</span></div><span class="arrow">&rarr;</span></a>';
+  }
+  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+
+  function update(){
+    var m=document.getElementById('fModel').value;
+    var sp=document.getElementById('fSpot').value;
+    var q=document.getElementById('fSearch').value.trim().toLowerCase();
+    var out=ALL.filter(function(p){
+      if(m&&p.model!==m) return false;
+      if(sp){ if(sp==='__rear'){ if(!isRear(p.spot)) return false; } else if(p.spot!==sp) return false; }
+      if(q){ var hay=(p.jeep+' '+p.spot+' '+p.timing).toLowerCase(); if(hay.indexOf(q)<0) return false; }
+      return true;
+    });
+    var cEl=document.getElementById('count');
+    var filtered=(m||sp||q);
+    cEl.innerHTML='<span><b>'+out.length+'</b> Jeep'+(out.length===1?'':'s')+(filtered?' match your search':' in the library')+'</span>'+(filtered?'':'<span class="scrollhint">&darr; Scroll through to find your match</span>');
+    var rEl=document.getElementById('results');
+    if(!out.length){ rEl.innerHTML='<div class="empty">No Jeeps match that exact combination yet — <a href="https://jeepleakfix.com/ask" style="color:var(--orange);font-weight:600">send me yours</a> and I\'ll add the fix.</div>'; return; }
+    rEl.innerHTML=out.map(rowHtml).join('');
+  }
+  function wire(){
+    ['fModel','fSpot'].forEach(function(id){document.getElementById(id).addEventListener('change',update);});
+    document.getElementById('fSearch').addEventListener('input',update);
+  }
+
+  fetch('/qa-feed.json',{cache:'no-store'}).then(function(r){return r.json();}).then(function(data){
+    ALL=data.map(parse).filter(valid);
+    ALL.sort(function(a,b){return (b.year||0)-(a.year||0);});
+    wire(); update();
+  }).catch(function(e){
+    document.getElementById('results').innerHTML='<div class="empty">Couldn\'t load the library right now. <a href="https://jeepleakfix.com/ask" style="color:var(--orange);font-weight:600">Ask Tony directly →</a></div>';
+  });
+})();
+</script>
+</body>
+</html>
