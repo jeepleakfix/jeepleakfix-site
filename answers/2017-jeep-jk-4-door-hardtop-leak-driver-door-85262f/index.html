@@ -106,6 +106,10 @@
   .mast .menu-panel .menu-shop{color:var(--orange);font-weight:700}
   .menu-div{height:1px;background:var(--line);margin:7px 6px}
   .mast .menu-panel .menu-fine{font-size:13px;color:var(--muted);font-weight:400;padding:8px 14px}
+  .mast .menu-panel a[href$="/guides"]{color:var(--orange);font-weight:600}
+  .ws-link{color:var(--orange);text-decoration:underline;text-underline-offset:2px;text-decoration-color:rgba(224,90,26,.5)}
+  .ws-link:hover{color:var(--orange-dk);text-decoration-color:var(--orange-dk)}
+  .ws-link em{font-style:italic}
 </style>
 </head>
 <body>
@@ -194,6 +198,32 @@
   b.addEventListener('click',function(e){e.stopPropagation();set(!document.body.classList.contains('menu-open'));});
   document.addEventListener('click',function(e){if(document.body.classList.contains('menu-open')&&!p.contains(e.target)&&!b.contains(e.target))set(false);});
   document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false);});
+})();
+</script>
+<script>/*wslink*/
+(function(){
+  var SKIP={A:1,SCRIPT:1,STYLE:1,BUTTON:1,NAV:1,FOOTER:1,H1:1,H2:1,H3:1,TEXTAREA:1,OPTION:1,SELECT:1};
+  function walk(node){
+    var c=node.firstChild;
+    while(c){
+      var next=c.nextSibling;
+      if(c.nodeType===1){ if(!SKIP[c.tagName]) walk(c); }
+      else if(c.nodeType===3 && /weatherstripping/i.test(c.nodeValue)){
+        var txt=c.nodeValue, frag=document.createDocumentFragment(), last=0, re=/weatherstripping/gi, m;
+        while((m=re.exec(txt))){
+          if(m.index>last) frag.appendChild(document.createTextNode(txt.slice(last,m.index)));
+          var a=document.createElement('a'); a.href='https://leakfixkit.com/'; a.className='ws-link';
+          var em=document.createElement('em'); em.textContent=m[0]; a.appendChild(em); frag.appendChild(a);
+          last=m.index+m[0].length;
+        }
+        if(last<txt.length) frag.appendChild(document.createTextNode(txt.slice(last)));
+        c.parentNode.replaceChild(frag,c);
+      }
+      c=next;
+    }
+  }
+  function go(){ if(document.body) walk(document.body); }
+  if(document.readyState!=='loading') go(); else document.addEventListener('DOMContentLoaded',go);
 })();
 </script>
 </body>
