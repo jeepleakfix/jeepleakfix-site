@@ -27,7 +27,7 @@
   .kick{font-size:12.5px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--orange)}
   h1{font-family:'Playfair Display',serif;font-size:clamp(32px,5vw,44px);font-weight:600;color:var(--ink);line-height:1.1;margin-top:12px}
   .head p{font-size:18px;color:var(--muted);max-width:520px;margin:14px auto 0}
-  .video{margin:30px 0 8px;aspect-ratio:16/9;background:#efeae2;border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--muted);text-align:center}
+  .video{position:relative;margin:30px 0 8px;aspect-ratio:16/9;background:#efeae2;border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--muted);text-align:center}
   .video iframe{width:100%;height:100%;border:0;display:block}
   .play{width:56px;height:56px;border-radius:50%;background:var(--orange);display:flex;align-items:center;justify-content:center;margin-bottom:10px}
   .play span{display:block;width:0;height:0;border-left:18px solid #fff;border-top:11px solid transparent;border-bottom:11px solid transparent;margin-left:4px}
@@ -100,10 +100,20 @@
     <p>Every kit includes a step-by-step installation video and is designed to be simple to apply — minimal tools, no complicated modifications.</p>
   </div>
 
-  <!-- INSTALL VIDEO EMBED: replace the inner content of this .video div with your <iframe ...></iframe> -->
+  <!-- INSTALL VIDEO EMBED (self-hosted MP4) -->
   <div class="video" id="install-video">
-    <div class="play"><span></span></div>
-    <div style="font-size:13px;letter-spacing:.04em">Installation video — coming soon</div>
+    <video id="installVid" autoplay muted loop playsinline controls preload="auto"
+           poster="https://jeepleakfix.com/install-poster.jpg"
+           style="width:100%;height:100%;object-fit:cover;background:#000"
+           onplay="if(window.gtag)gtag('event','install_video_play',{event_category:'engagement'});">
+      <source src="https://jeepleakfix.com/install-sizzle.mp4" type="video/mp4">
+      Your browser doesn't support embedded video.
+      <a href="https://jeepleakfix.com/install-sizzle.mp4">Watch the installation video</a>.
+    </video>
+    <button id="unmuteBtn" type="button" aria-label="Unmute video"
+      style="position:absolute;top:14px;right:14px;z-index:5;border:0;cursor:pointer;
+             background:var(--orange);color:#fff;font:600 13px/1 'Inter',sans-serif;
+             padding:9px 14px;border-radius:999px;box-shadow:0 4px 14px rgba(0,0,0,.25)">🔊 Tap for sound</button>
   </div>
 
   <div class="steps">
@@ -135,6 +145,21 @@
   b.addEventListener('click',function(e){e.stopPropagation();set(!document.body.classList.contains('menu-open'));});
   document.addEventListener('click',function(e){if(document.body.classList.contains('menu-open')&&!p.contains(e.target)&&!b.contains(e.target))set(false);});
   document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false);});
+})();
+</script>
+<script>/*installvid*/
+(function(){
+  var v=document.getElementById('installVid'),b=document.getElementById('unmuteBtn');
+  if(!v||!b)return;
+  // Nudge autoplay in case the browser ignores the attribute
+  var p=v.play(); if(p&&p.catch)p.catch(function(){});
+  b.addEventListener('click',function(){
+    v.muted=false; v.volume=1; v.play();
+    b.style.display='none';
+    if(window.gtag)gtag('event','install_video_unmute',{event_category:'engagement'});
+  });
+  // Hide the button if they unmute via the native controls
+  v.addEventListener('volumechange',function(){ if(!v.muted)b.style.display='none'; });
 })();
 </script>
 <script>/*wslink*/
