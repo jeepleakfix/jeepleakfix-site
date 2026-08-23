@@ -42,7 +42,7 @@ gtag('config', 'G-P2V2SH3SPG');
       "email": "jeepleakfix@gmail.com",
       "telephone": "+1-828-591-0302",
       "founder": {"@id": "https://jeepleakfix.com/#tony"},
-      "description": "Expert Jeep Wrangler and Gladiator water leak and wind noise diagnosis and fixes for JK, JL, and Gladiator. Personalized help from Tony, plus US-made body-side weatherstripping kits.",
+      "description": "Expert Jeep Wrangler and Gladiator water leak and wind noise diagnosis and fixes for JK, JL, and Gladiator. Personalized help from Tony, plus US-made Body-Side Seal Kits.",
       "areaServed": "Worldwide",
       "sameAs": [
         "https://leakfixkit.com",
@@ -93,7 +93,7 @@ gtag('config', 'G-P2V2SH3SPG');
   ]
 }
 </script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Why does my Jeep Wrangler leak water and make wind noise even after I replaced the door seals?","acceptedAnswer":{"@type":"Answer","text":"Because the leak is almost never the door seal. Jeep never added body-side weatherstripping, so a new door seal still has nothing to press against on the body. Closing that body-side gap is what actually stops the leak — and the wind noise that comes through the same opening."}},{"@type":"Question","name":"Do the JK, JL, and Gladiator all leak for the same reason?","acceptedAnswer":{"@type":"Answer","text":"Yes. Every Wrangler and Gladiator left the factory without body-side weatherstripping, so the root cause is the same across model years, door counts, and roof types."}},{"@type":"Question","name":"Where do Jeep water leaks and wind noise come from?","acceptedAnswer":{"@type":"Answer","text":"The most common entry points are the A-pillar and windshield corners, the freedom panel edges, the door-to-body junction, and the rear cargo door and glass. Those are the same openings the wind noise comes through at highway speed."}},{"@type":"Question","name":"Can I fix a Jeep water leak myself?","acceptedAnswer":{"@type":"Answer","text":"Yes. Most owners fix it at home by checking alignment and adding the correct body-side weatherstripping kit for their model. No special tools are required and step-by-step instructions are included."}},{"@type":"Question","name":"Does the leak fix kit also reduce wind noise?","acceptedAnswer":{"@type":"Answer","text":"Yes. Sealing the body-side gap that lets water in also drastically reduces the wind noise and rattles that come through the same gap at highway speed."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Why does my Jeep Wrangler leak water and make wind noise even after I replaced the door seals?","acceptedAnswer":{"@type":"Answer","text":"Because the leak is almost never the door seal. Jeep never added body-side weatherstripping, so a new door seal still has nothing to press against on the body. Closing that body-side gap is what actually stops the leak — and the wind noise that comes through the same opening."}},{"@type":"Question","name":"Do the JK, JL, and Gladiator all leak for the same reason?","acceptedAnswer":{"@type":"Answer","text":"Yes. Every Wrangler and Gladiator left the factory without body-side weatherstripping, so the root cause is the same across model years, door counts, and roof types."}},{"@type":"Question","name":"Where do Jeep water leaks and wind noise come from?","acceptedAnswer":{"@type":"Answer","text":"The most common entry points are the A-pillar and windshield corners, the freedom panel edges, the door-to-body junction, and the rear cargo door and glass. Those are the same openings the wind noise comes through at highway speed."}},{"@type":"Question","name":"Can I fix a Jeep water leak myself?","acceptedAnswer":{"@type":"Answer","text":"Yes. Most owners fix it at home by checking alignment and adding the correct Body-Side Seal Kit for their model. No special tools are required and step-by-step instructions are included."}},{"@type":"Question","name":"Does the leak fix kit also reduce wind noise?","acceptedAnswer":{"@type":"Answer","text":"Yes. Sealing the body-side gap that lets water in also drastically reduces the wind noise and rattles that come through the same gap at highway speed."}}]}</script>
 
 <style>
   :root{
@@ -259,8 +259,8 @@ gtag('config', 'G-P2V2SH3SPG');
   .menu-div{height:1px;background:var(--line);margin:7px 6px}
   .mast .menu-panel .menu-fine{font-size:13px;color:var(--muted);font-weight:400;padding:8px 14px}
   .mast .menu-panel a[href$="/guides"]{color:var(--orange);font-weight:600}
-  .ws-link{color:var(--orange);text-decoration:underline;text-underline-offset:2px;text-decoration-color:rgba(224,90,26,.5)}
-  .ws-link:hover{color:var(--orange-dk);text-decoration-color:var(--orange-dk)}
+  .ws-link{color:inherit;font-style:italic;text-decoration:underline;text-underline-offset:2px;text-decoration-color:rgba(122,112,102,.4)}
+  .ws-link:hover,.ws-link:focus-visible,.ws-link:active{color:var(--orange);text-decoration-color:var(--orange)}
   .ws-link em{font-style:italic}
 
   .kitfinder{--orange:#E05A1A;--orange-dk:#bf440e;--ink:#1d1813;--body:#332c25;--muted:#7a7066;--line:#e9e1d7;--paper:#fcfaf6;--sand:#f4ede3;border-top:1px solid #e9e1d7;padding:38px 0 8px;font-family:'Inter',sans-serif;color:#332c25;line-height:1.7}
@@ -531,8 +531,8 @@ document.addEventListener('DOMContentLoaded', async function(){
     while(c){
       var next=c.nextSibling;
       if(c.nodeType===1){ if(!SKIP[c.tagName]) walk(c); }
-      else if(c.nodeType===3 && /weatherstripping/i.test(c.nodeValue)){
-        var txt=c.nodeValue, frag=document.createDocumentFragment(), last=0, re=/weatherstripping/gi, m;
+      else if(c.nodeType===3 && /body[- ]side weatherstripping|body[- ]side seal kits?/i.test(c.nodeValue)){
+        var txt=c.nodeValue, frag=document.createDocumentFragment(), last=0, re=/body[- ]side weatherstripping|body[- ]side seal kits?/gi, m;
         while((m=re.exec(txt))){
           if(m.index>last) frag.appendChild(document.createTextNode(txt.slice(last,m.index)));
           var a=document.createElement('a'); a.href='https://leakfixkit.com/'; a.className='ws-link';

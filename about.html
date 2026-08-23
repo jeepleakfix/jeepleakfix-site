@@ -79,8 +79,8 @@
   .menu-div{height:1px;background:var(--line);margin:7px 6px}
   .mast .menu-panel .menu-fine{font-size:13px;color:var(--muted);font-weight:400;padding:8px 14px}
   .mast .menu-panel a[href$="/guides"]{color:var(--orange);font-weight:600}
-  .ws-link{color:var(--orange);text-decoration:underline;text-underline-offset:2px;text-decoration-color:rgba(224,90,26,.5)}
-  .ws-link:hover{color:var(--orange-dk);text-decoration-color:var(--orange-dk)}
+  .ws-link{color:inherit;font-style:italic;text-decoration:underline;text-underline-offset:2px;text-decoration-color:rgba(122,112,102,.4)}
+  .ws-link:hover,.ws-link:focus-visible,.ws-link:active{color:var(--orange);text-decoration-color:var(--orange)}
   .ws-link em{font-style:italic}
 </style>
 </head>
@@ -125,7 +125,7 @@
   <p>For the last 4 years, I've proudly manufactured my very own Jeep-specific body-side weatherstripping right here in the <strong>USA</strong> — developed through real-world testing, continuous refinement, and hundreds of successful installations. Built by a Jeeper, for Jeepers, with one goal in mind: keep water where it belongs… outside.</p>
 
   <h2 class="serif">How I can help you</h2>
-  <p>Every Jeep leaks from different locations. Tell me your year, model, and where yours is leaking, and I'll reply personally with the recommended fix for your exact Jeep. If you want the weatherstripping kit I make, it's available at <a href="https://leakfixkit.com/" style="color:var(--orange);font-weight:600;text-decoration:underline">leakfixkit.com</a>.</p>
+  <p>Every Jeep leaks from different locations. Tell me your year, model, and where yours is leaking, and I'll reply personally with the recommended fix for your exact Jeep. If you want the Body-Side Seal Kit I make, it's available at <a href="https://leakfixkit.com/" style="color:var(--orange);font-weight:600;text-decoration:underline">leakfixkit.com</a>.</p>
 
   <div style="text-align:center;margin:44px 0 6px"><h2 class="serif" style="margin:0 0 6px">Got a leak? Let's solve it.</h2><p style="color:var(--muted);margin:0">Fill out your Jeep's details and I'll reply personally with your fix.</p></div><details class="formreveal">
   <summary><span class="fr-label">Get your personalized fix</span><span class="fr-hint">Fill out your Jeep's details</span></summary>
@@ -190,8 +190,8 @@
     while(c){
       var next=c.nextSibling;
       if(c.nodeType===1){ if(!SKIP[c.tagName]) walk(c); }
-      else if(c.nodeType===3 && /weatherstripping/i.test(c.nodeValue)){
-        var txt=c.nodeValue, frag=document.createDocumentFragment(), last=0, re=/weatherstripping/gi, m;
+      else if(c.nodeType===3 && /body[- ]side weatherstripping|body[- ]side seal kits?/i.test(c.nodeValue)){
+        var txt=c.nodeValue, frag=document.createDocumentFragment(), last=0, re=/body[- ]side weatherstripping|body[- ]side seal kits?/gi, m;
         while((m=re.exec(txt))){
           if(m.index>last) frag.appendChild(document.createTextNode(txt.slice(last,m.index)));
           var a=document.createElement('a'); a.href='https://leakfixkit.com/'; a.className='ws-link';
