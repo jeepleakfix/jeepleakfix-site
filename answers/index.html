@@ -196,7 +196,7 @@
 </div>
 
 <footer><div class="row">
-  <div class="brand" style="color:#fff;font-size:18px">Jeep<span>Leak</span>Fix</div>
+  <a href="/" class="brand" style="color:#fff;font-size:18px" aria-label="JeepLeakFix home">Jeep<span>Leak</span>Fix</a>
   <div style="display:flex;gap:22px;flex-wrap:wrap">
     <a href="https://leakfixkit.com/">Leak Fix Kits</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a>
   </div>
@@ -273,12 +273,13 @@
     var d=String(doors||'').replace(/\D/g,''); var m=String(model||'').toUpperCase();
     // Softtop & Bestop Sunrider -> softtop variant; Hardtop & Sky One-Touch -> hardtop variant
     var soft=(roof==='Softtop'||roof==='Bestop Sunrider');
-    function cart(vh,vs){return 'https://leakfixkit.com/cart/'+(soft?vs:vh)+':1';}
-    if(m==='JK'&&d==='4') return {name:'4-Door JK Leak Fix Kit',link:cart('46583487430906','46583487463674')};
-    if(m==='JK'&&d==='2') return {name:'2-Door JK Leak Fix Kit',link:cart('46609886314746','46609886347514')};
-    if(m==='GLADIATOR') return {name:'Gladiator Leak Fix Kit',link:cart('46609846468858','46609846501626')};
-    if(m==='JL'&&d==='4') return {name:'JL Leak Fix Kit',link:cart('46609846403322','46609846436090')};
-    if(m==='JL'&&d==='2') return {name:'2-Door JLU Leak Fix Kit',link:cart('46583612506362','46583612539130')};
+    // Product page (not a cart permalink) with their variant preselected, so they can read first.
+    function kit(handle,vh,vs){return 'https://leakfixkit.com/products/'+handle+'?variant='+(soft?vs:vh);}
+    if(m==='JK'&&d==='4') return {name:'4-Door Jeep Wrangler JKU Water Leak Fix Kit (2007\u20132018)',link:kit('4-door-jeep-leak-fix-kit','46583487430906','46583487463674')};
+    if(m==='JK'&&d==='2') return {name:'2-Door Jeep Wrangler JK Water Leak Fix Kit (2007\u20132018)',link:kit('2-door-jeep-jk-leak-fix-kit-2007-2018','46609886314746','46609886347514')};
+    if(m==='GLADIATOR') return {name:'Jeep Gladiator JT Water Leak Fix Kit (2020\u20132026)',link:kit('jeep-gladiator-jt-water-leak-fix-kit','49673826828538','49673826861306')};
+    if(m==='JL'&&d==='4') return {name:'4-Door Jeep Wrangler JLU Water Leak Fix Kit (2018\u20132026)',link:kit('wrangler-jl-gladiator-2018-2024-leak-fix-kit','46609846403322','46609846436090')};
+    if(m==='JL'&&d==='2') return {name:'2-Door Jeep Wrangler JL Water Leak Fix Kit (2018\u20132026)',link:kit('2-door-jeep-jlu-2018-2024','46583612506362','46583612539130')};
     return {name:'Leak Fix Kit',link:'https://leakfixkit.com'};
   }
   var QS={model:null,doors:null,roof:null,where:null,when:null};
@@ -349,7 +350,7 @@
       '<p>New door seals won’t fix it, because the body side was never sealed. The fix is the seal Jeep left off: <b>body-side weatherstripping</b>, cut for your '+esc(QS.model)+'. Most owners install it in an afternoon, no drilling.</p>'+
       libLine+
       '<div class="qkit"><div class="qkl">Your exact-fit kit</div><h4>'+esc(kit.name)+'</h4><p>The body-side seal matched to your '+esc(title.toLowerCase())+'. Free guidance from me if you get stuck.</p>'+
-      '<a class="qbtn" href="'+kit.link+'" target="_blank" rel="noopener">Add my kit to cart →</a>'+
+      '<a class="qbtn" href="'+kit.link+'" target="_blank" rel="noopener">Check out the kit →</a>'+
       '<a class="qbtn ghost" href="https://jeepleakfix.com/ask">Have Tony review my exact setup first</a>'+
       '<div class="qtrust">30-Day Money-Back Guarantee · Free U.S. Shipping · Made in the USA</div></div>'+
       '<div class="qrestart"><button onclick="QRESTART()">↺ Start over</button></div></div>';
