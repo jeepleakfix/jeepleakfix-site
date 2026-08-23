@@ -262,6 +262,43 @@ gtag('config', 'G-P2V2SH3SPG');
   .ws-link{color:var(--orange);text-decoration:underline;text-underline-offset:2px;text-decoration-color:rgba(224,90,26,.5)}
   .ws-link:hover{color:var(--orange-dk);text-decoration-color:var(--orange-dk)}
   .ws-link em{font-style:italic}
+
+  .kitfinder{--orange:#E05A1A;--orange-dk:#bf440e;--ink:#1d1813;--body:#332c25;--muted:#7a7066;--line:#e9e1d7;--paper:#fcfaf6;--sand:#f4ede3;border-top:1px solid #e9e1d7;padding:38px 0 8px;font-family:'Inter',sans-serif;color:#332c25;line-height:1.7}
+  .kitfinder h2{font-family:'Playfair Display',Georgia,serif;font-size:26px;color:#1d1813;font-weight:600;margin:0 0 8px}
+.kitfinder .sub{color:var(--muted);font-size:15.5px;margin-bottom:22px;max-width:640px}
+.kitfinder .loading{padding:30px;text-align:center;color:var(--muted)}
+.kitfinder .quiz{background:#fff;border:1.5px solid var(--orange);border-radius:18px;padding:28px 28px 30px;box-shadow:0 12px 34px rgba(0,0,0,.06)}
+.kitfinder .qbar{height:6px;background:var(--sand);border-radius:99px;overflow:hidden;margin-bottom:24px}
+.kitfinder .qbar i{display:block;height:100%;width:0;background:var(--orange);border-radius:99px;transition:width .35s ease}
+.kitfinder .qstep .qk{font-size:11.5px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--orange);margin-bottom:8px}
+.kitfinder .qstep h3{font-family:'Playfair Display',serif;font-size:clamp(21px,3vw,26px);font-weight:600;color:var(--ink);line-height:1.2}
+.kitfinder .qstep .qsub{color:var(--muted);font-size:14.5px;margin:6px 0 20px}
+.kitfinder .qopts{display:grid;gap:11px}
+.kitfinder .qopts.two{grid-template-columns:1fr 1fr}
+.kitfinder .qopt{display:flex;align-items:center;gap:13px;border:1.5px solid var(--line);background:#fff;border-radius:12px;padding:15px 17px;cursor:pointer;transition:.15s;font-size:16px;font-weight:600;color:var(--ink);text-align:left;font-family:inherit;width:100%}
+.kitfinder .qopt:hover{border-color:var(--orange);background:#fff7f2;transform:translateY(-1px)}
+.kitfinder .qopt .qic{width:36px;height:36px;flex:none;border-radius:9px;background:var(--sand);color:var(--orange);display:flex;align-items:center;justify-content:center;font-size:17px;font-weight:700}
+.kitfinder .qopt small{display:block;color:var(--muted);font-weight:500;font-size:12.5px;margin-top:1px}
+.kitfinder .qnav{display:flex;align-items:center;justify-content:space-between;margin-top:22px}
+.kitfinder .qback{background:none;border:none;color:var(--muted);font-size:14px;cursor:pointer;font-family:inherit}
+.kitfinder .qback:hover{color:var(--ink)}
+.kitfinder .qcount{font-size:13px;color:var(--muted)}
+.kitfinder .qtag{display:inline-block;background:var(--sand);color:var(--orange-dk);font-size:13px;font-weight:700;padding:6px 13px;border-radius:99px;margin-bottom:14px}
+.kitfinder .qres h3{font-family:'Playfair Display',serif;font-size:clamp(22px,3.4vw,30px);font-weight:700;color:var(--ink);line-height:1.18;margin-bottom:14px}
+.kitfinder .qhit{border-left:4px solid var(--orange);background:var(--sand);border-radius:0 12px 12px 0;padding:15px 18px;margin:18px 0;font-size:15.5px;color:var(--ink)}
+.kitfinder .qhit b{color:var(--orange-dk)}
+.kitfinder .qres p{font-size:15px;margin-bottom:13px;color:var(--body)}
+.kitfinder .qkit{border:1.5px solid var(--orange);border-radius:14px;padding:22px;margin-top:24px;background:#fffdfb}
+.kitfinder .qkit .qkl{font-size:11.5px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:var(--muted);margin-bottom:7px}
+.kitfinder .qkit h4{font-family:'Playfair Display',serif;font-size:21px;font-weight:700;color:var(--ink);margin-bottom:6px}
+.kitfinder .qkit p{font-size:14px;color:var(--muted);margin-bottom:18px}
+.kitfinder .qbtn{display:flex;align-items:center;justify-content:center;gap:9px;background:var(--orange);color:#fff;text-decoration:none;font-weight:600;font-size:16px;padding:15px 26px;border-radius:9px;width:100%;transition:.15s;border:none;cursor:pointer;font-family:inherit}
+.kitfinder .qbtn:hover{background:var(--orange-dk)}
+.kitfinder .qbtn.ghost{background:#fff;color:var(--orange);border:1.5px solid var(--orange);margin-top:10px}
+.kitfinder .qbtn.ghost:hover{background:#fff7f2}
+.kitfinder .qtrust{margin-top:13px;text-align:center;font-size:12.5px;color:var(--muted);letter-spacing:.2px}
+.kitfinder .qrestart{text-align:center;margin-top:18px}
+.kitfinder .qrestart button{background:none;border:none;color:var(--muted);font-size:13px;cursor:pointer;text-decoration:underline;font-family:inherit}
 </style>
 </head>
 <body>
@@ -353,6 +390,17 @@ gtag('config', 'G-P2V2SH3SPG');
     </a>
   </div>
 </div></article>
+
+
+<!-- KIT FINDER -->
+<section class="kitfinder"><div class="col">
+  <h2 class="serif">Find the fix for your exact Jeep</h2>
+  <div class="sub">Tell me about your Jeep and I'll recommend the exact body-side seal kit built to seal out water and loud road noise.</div>
+  <div class="quiz">
+    <div class="qbar"><i id="qbarFill"></i></div>
+    <div id="quizStage"><div class="loading">Loading&hellip;</div></div>
+  </div>
+</div></section>
 
 <!-- ABOUT (compact, expandable) -->
 <section class="about">
@@ -499,6 +547,175 @@ document.addEventListener('DOMContentLoaded', async function(){
   }
   function go(){ if(document.body) walk(document.body); }
   if(document.readyState!=='loading') go(); else document.addEventListener('DOMContentLoaded',go);
+})();
+</script>
+<script>/*kitfinder*/
+(function(){
+  var _stub={style:{},textContent:'',innerHTML:'',appendChild:function(){}};
+  window.QEL=function(id){return document.getElementById(id)||_stub;};
+})();
+</script>
+<script>
+(function(){
+  var ROOFS=['Hardtop','Softtop','Sky One-Touch','Bestop Sunrider'];
+  function parse(d){
+    var s=String(d.jeep||'');
+    var ym=s.match(/\b(19|20)\d\d\b/); var year=ym?parseInt(ym[0],10):null;
+    var model=/gladiator/i.test(s)?'Gladiator':(/\bJL\b/.test(s)?'JL':(/\bJK\b/.test(s)?'JK':null));
+    var dm=s.match(/(\d)\s*-?\s*Door/i); var doors=dm?parseInt(dm[1],10):null;
+    var roof=null; ROOFS.forEach(function(r){ if(s.toLowerCase().indexOf(r.toLowerCase())>=0) roof=r; });
+    return {year:year,model:model,doors:doors,roof:roof,jeep:s,spot:String(d.location||d.category||'').trim(),url:d.url||'#',timing:d.timing||''};
+  }
+  function valid(p){
+    if(!p.year||!p.model) return false;
+    if(p.model==='JK' && (p.year<2007||p.year>2018)) return false;
+    if(p.model==='JL' && (p.year<2018||p.year>2026)) return false;
+    if(p.model==='Gladiator' && (p.year<2020||p.year>2026)) return false;
+    if(p.model==='Gladiator' && p.doors===2) return false;
+    if(p.model==='JK' && p.roof==='Sky One-Touch') return false;
+    return true;
+  }
+  var isDoor=function(spot){return /door/i.test(spot);};
+  var isRear=function(spot){return /back door/i.test(spot);};
+
+  var ALL=[];
+  var DOORPCT=78;
+  function render(){
+    var n=ALL.length;
+    QEL('hHeadCount').textContent=n;
+    var doorN=ALL.filter(function(p){return isDoor(p.spot);}).length;
+    var doorPct=n?Math.round(doorN/n*100):0;
+    DOORPCT=doorPct||78;
+    QEL('sDoors').textContent=doorPct+'%';
+    var models={}; ALL.forEach(function(p){models[p.model]=1;});
+    QEL('sModels').textContent=Object.keys(models).length;
+    var roofs={}; ALL.forEach(function(p){if(p.roof)roofs[p.roof]=1;});
+    QEL('sRoofs').textContent=Object.keys(roofs).length;
+
+    // bars: group spots
+    var groups=[
+      {key:'Driver Door',label:'Driver Door'},
+      {key:'Passenger Door',label:'Passenger Door'},
+      {key:'__rear',label:'Rear / Back Doors'},
+      {key:'Freedom Panels',label:'Freedom Panels'},
+      {key:'Cargo Door',label:'Cargo Door'},
+      {key:'Not Sure',label:'Not Sure'}
+    ];
+    function inGroup(p,key){ if(key==='__rear')return isRear(p.spot); return p.spot===key; }
+    var counts=groups.map(function(g){return {g:g,c:ALL.filter(function(p){return inGroup(p,g.key);}).length};}).filter(function(x){return x.c>0;});
+    counts.sort(function(a,b){return b.c-a.c;});
+    var max=counts.length?counts[0].c:1;
+    var html=counts.map(function(x){
+      var pct=Math.round(x.c/n*100);
+      var w=Math.round(x.c/max*100);
+      var dim=isDoor(x.g.label==='Rear / Back Doors'?'back door':x.g.key)?'':'dim';
+      var doorish=(x.g.key==='Driver Door'||x.g.key==='Passenger Door'||x.g.key==='__rear');
+      return '<div class="bar"><div class="lbl">'+x.g.label+'<small>'+x.c+' Jeeps</small></div>'+
+             '<div class="track"><div class="fill '+(doorish?'':'dim')+'" style="width:'+w+'%"></div></div>'+
+             '<div class="pct">'+pct+'%</div></div>';
+    }).join('');
+    QEL('bars').innerHTML=html||'<div class="empty">No data.</div>';
+    QEL('insight').innerHTML='<b>'+doorN+' of '+n+' leaks ('+doorPct+'%) are at the doors.</b> Every other vehicle seals the door against a rubber strip on the body. Jeep only puts the seal on the door — so the gap around every door opening is exactly where the water gets in.';
+  }
+
+  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+
+  // ---------- Quiz (kit selector) ----------
+  function getKitForJeep(model,doors,roof){
+    var d=String(doors||'').replace(/\D/g,''); var m=String(model||'').toUpperCase();
+    // Softtop & Bestop Sunrider -> softtop variant; Hardtop & Sky One-Touch -> hardtop variant
+    var soft=(roof==='Softtop'||roof==='Bestop Sunrider');
+    // Product page (not a cart permalink) with their variant preselected, so they can read first.
+    function kit(handle,vh,vs){return 'https://leakfixkit.com/products/'+handle+'?variant='+(soft?vs:vh);}
+    if(m==='JK'&&d==='4') return {name:'4-Door Jeep Wrangler JKU Water Leak Fix Kit (2007\u20132018)',link:kit('4-door-jeep-leak-fix-kit','46583487430906','46583487463674')};
+    if(m==='JK'&&d==='2') return {name:'2-Door Jeep Wrangler JK Water Leak Fix Kit (2007\u20132018)',link:kit('2-door-jeep-jk-leak-fix-kit-2007-2018','46609886314746','46609886347514')};
+    if(m==='GLADIATOR') return {name:'Jeep Gladiator JT Water Leak Fix Kit (2020\u20132026)',link:kit('jeep-gladiator-jt-water-leak-fix-kit','49673826828538','49673826861306')};
+    if(m==='JL'&&d==='4') return {name:'4-Door Jeep Wrangler JLU Water Leak Fix Kit (2018\u20132026)',link:kit('wrangler-jl-gladiator-2018-2024-leak-fix-kit','46609846403322','46609846436090')};
+    if(m==='JL'&&d==='2') return {name:'2-Door Jeep Wrangler JL Water Leak Fix Kit (2018\u20132026)',link:kit('2-door-jeep-jlu-2018-2024','46583612506362','46583612539130')};
+    return {name:'Leak Fix Kit',link:'https://leakfixkit.com'};
+  }
+  var QS={model:null,doors:null,roof:null,where:null,when:null};
+  var QSTEPS=[
+    {key:'model',k:'Step 1 of 5',q:'Which Jeep do you have?',sub:'Every platform leaks — the fix differs by body.',opts:[
+      {v:'JK',t:'Wrangler JK',s:'2007–2018',ic:'JK'},{v:'JL',t:'Wrangler JL',s:'2018–2026',ic:'JL'},{v:'Gladiator',t:'Gladiator',s:'2020–2026',ic:'GL'}]},
+    {key:'doors',k:'Step 2 of 5',q:'How many doors?',sub:'This decides which seal kit fits your body lines.',cols:'two',opts:[
+      {v:'2',t:'2-Door',ic:'2'},{v:'4',t:'4-Door',ic:'4'}]},
+    {key:'roof',k:'Step 3 of 5',q:'What’s on top?',sub:'Every roof type in my data has leaked — it’s not the roof.',opts:[
+      {v:'Hardtop',t:'Hardtop',ic:'H'},{v:'Softtop',t:'Soft Top',ic:'S'},{v:'Sky One-Touch',t:'Sky One-Touch',s:'Power top',ic:'SK'},{v:'Bestop Sunrider',t:'Bestop Sunrider',ic:'B'}]},
+    {key:'where',k:'Step 4 of 5',q:'Where’s the water getting in?',sub:'Best guess is fine — I confirm the rest.',opts:[
+      {v:'Driver Door',t:'Driver door',ic:'←'},{v:'Passenger Door',t:'Passenger door',ic:'→'},{v:'Rear Doors',t:'Rear / back doors',ic:'⇄'},{v:'Freedom Panels',t:'Freedom panels',s:'Overhead',ic:'□'},{v:'Cargo / Tailgate',t:'Cargo / tailgate area',ic:'▭'},{v:'Not Sure',t:'Not sure — it just shows up',ic:'?'}]},
+    {key:'when',k:'Step 5 of 5',q:'When does it leak?',sub:'Timing tells me how the water is tracking in.',opts:[
+      {v:'Heavy Rain',t:'Heavy rain',ic:'☂'},{v:'Light Rain',t:'Light rain / mist',ic:'☔'},{v:'Car Wash',t:'Car wash',ic:'⚑'},{v:'All of the above',t:'All of the above',ic:'✓'}]}
+  ];
+  var qIdx=0;
+  function initQuiz(){ qIdx=0; QS={model:null,doors:null,roof:null,where:null,when:null}; renderStep(); }
+  function renderStep(){
+    var s=QSTEPS[qIdx];
+    QEL('qbarFill').style.width=(qIdx/QSTEPS.length*100)+'%';
+    var cols=s.cols==='two'?'qopts two':'qopts';
+    var h='<div class="qstep"><div class="qk">'+s.k+'</div><h3>'+s.q+'</h3><div class="qsub">'+s.sub+'</div><div class="'+cols+'">';
+    s.opts.forEach(function(o){
+      h+='<button class="qopt" onclick="QCHOOSE(\''+s.key+'\',\''+o.v.replace(/'/g,"\\'")+'\')"><span class="qic">'+o.ic+'</span><span>'+o.t+(o.s?'<small>'+o.s+'</small>':'')+'</span></button>';
+    });
+    h+='</div><div class="qnav">'+(qIdx>0?'<button class="qback" onclick="QBACK()">← Back</button>':'<span></span>')+'<span class="qcount">'+(qIdx+1)+' of '+QSTEPS.length+'</span></div></div>';
+    QEL('quizStage').innerHTML=h;
+  }
+  window.QCHOOSE=function(key,val){
+    QS[key]=val;
+    if(key==='model'&&val==='Gladiator') QS.doors='4';
+    qIdx++;
+    if(QSTEPS[qIdx]&&QSTEPS[qIdx].key==='doors'&&QS.model==='Gladiator') qIdx++;
+    if(qIdx>=QSTEPS.length) qResult(); else renderStep();
+  };
+  window.QBACK=function(){
+    qIdx--;
+    if(QSTEPS[qIdx]&&QSTEPS[qIdx].key==='doors'&&QS.model==='Gladiator') qIdx--;
+    if(qIdx<0)qIdx=0; renderStep();
+  };
+  window.QRESTART=function(){ initQuiz(); };
+  function whereLine(){
+    var w=QS.where;
+    if(w==='Freedom Panels') return {stat:'Freedom-panel drips are real — but in my data <b>'+DOORPCT+'% of leaks still trace back to the door openings</b>, and panel water often runs forward from that same gap.',head:'the overhead seals plus the body-side gap most owners miss'};
+    if(w==='Cargo / Tailgate') return {stat:'Even rear and cargo leaks share the cause: <b>across 148 Jeeps, the body side of the opening was never sealed at the factory.</b>',head:'the unsealed body-side surface around your openings'};
+    if(w==='Not Sure') return {stat:'“Not sure” is the most honest answer — and the most common. In my data <b>'+DOORPCT+'% of 148 Jeeps leaked at the doors</b>, so that’s where we look first.',head:'the door openings — the #1 source in my data'};
+    return {stat:'You’re in the majority: <b>'+DOORPCT+'% of the 148 Jeeps I’ve diagnosed leak right here — at the doors.</b> It’s not your roof, and it’s not a defect.',head:'the gap where your '+String(QS.where).toLowerCase()+' meets the body'};
+  }
+  function matchCount(){
+    var m=QS.model;
+    return ALL.filter(function(p){ if(p.model!==m) return false;
+      if(QS.where==='Rear Doors') return isRear(p.spot);
+      if(QS.where==='Driver Door'||QS.where==='Passenger Door') return p.spot===QS.where;
+      return isDoor(p.spot); }).length;
+  }
+  function qResult(){
+    QEL('qbarFill').style.width='100%';
+    var c=whereLine();
+    var kit=getKitForJeep(QS.model,QS.doors,QS.roof);
+    var title=(QS.model==='Gladiator'?'Jeep Gladiator':'Jeep Wrangler '+QS.model)+' '+QS.doors+'-Door '+QS.roof;
+    var mc=matchCount();
+    var libLine = mc>0 ? '<p style="font-size:14px;color:var(--muted)">In my library, <b style="color:var(--ink)">'+mc+' '+(QS.model==='Gladiator'?'Gladiators':QS.model+' '+QS.doors+'-Doors')+'</b> leaked just like yours. <a href="https://jeepleakfix.com/faqs" style="color:var(--orange);font-weight:600">See the real diagnoses →</a></p>' : '';
+    QEL('quizStage').innerHTML=
+      '<div class="qres"><div class="qtag">Your diagnosis</div>'+
+      '<h3>Your '+esc(title)+' is leaking where Jeep forgot to seal it.</h3>'+
+      '<div class="qhit">'+c.stat+'</div>'+
+      '<p>Here’s what’s happening: Jeep seals the <em>door</em>, but never seals <b>'+c.head+'</b>. The door closes onto bare painted metal, so water and wind find the gap and run inside — exactly what you’re seeing in '+String(QS.when).toLowerCase()+'.</p>'+
+      '<p>New door seals won’t fix it, because the body side was never sealed. The fix is the seal Jeep left off: <b>body-side weatherstripping</b>, cut for your '+esc(QS.model)+'. Most owners install it in an afternoon, no drilling.</p>'+
+      libLine+
+      '<div class="qkit"><div class="qkl">Your exact-fit kit</div><h4>'+esc(kit.name)+'</h4><p>The body-side seal matched to your '+esc(title.toLowerCase())+'. Free guidance from me if you get stuck.</p>'+
+      '<a class="qbtn" href="'+kit.link+'" target="_blank" rel="noopener">Check out the kit →</a>'+
+      '<a class="qbtn ghost" href="https://jeepleakfix.com/ask">Have Tony review my exact setup first</a>'+
+      '<div class="qtrust">30-Day Money-Back Guarantee · Free U.S. Shipping · Made in the USA</div></div>'+
+      '<div class="qrestart"><button onclick="QRESTART()">↺ Start over</button></div></div>';
+  }
+
+  fetch('/qa-feed.json',{cache:'no-store'}).then(function(r){return r.json();}).then(function(data){
+    ALL=data.map(parse).filter(valid);
+    ALL.sort(function(a,b){return (b.year||0)-(a.year||0);});
+    render();
+  }).catch(function(e){
+    QEL('bars').innerHTML='<div class="empty">Couldn\'t load the data right now. <a href="https://jeepleakfix.com/ask" style="color:var(--orange);font-weight:600">Ask Tony directly →</a></div>';
+  });
+  initQuiz();
 })();
 </script>
 </body>
