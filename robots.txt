@@ -1,0 +1,10 @@
+# jeepleakfix.com
+# Static site — there is no /search endpoint. Blocking the pattern stops
+# crawl budget being spent on spam URLs pointed at this domain.
+
+User-agent: *
+Allow: /
+Disallow: /search
+Disallow: /*?q=
+
+Sitemap: https://jeepleakfix.com/sitemap.xml
